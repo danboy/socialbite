@@ -1,0 +1,48 @@
+0.5.12
+- Explicitly pass the :session_id in the post params to /sessions/finish after the suite is finished
+
+0.5.11
+- Added ScrewUnit::Representations::Spec.project_js_files, .project_css_files, and .jquery_js_file.
+
+0.5.10
+- Updated to erector 0.6.7, which fixes a bug related to including modules into Representations.
+
+0.5.9
+- Allow test suite to clear all cookies
+
+0.5.7
+- Fixed Server runner
+
+0.5.5
+- Renamed ScrewUnit::ThinRunner to ScrewUnit::Server
+
+0.5.4
+- Added ScrewUnit::ThinRunner.start
+
+0.5.0
+- Replaced thin-rest with Sinatra and Lucky Luciano as the server base.
+- The Screw Unit Server is now Rake middleware.
+- Sensible directory defaults for the screw_unit_server executable.
+- Replaced /implementations with /javascripts, assuming you have a /javascripts directory in the application root.
+
+0.4.0
+- Added ScrewUnit::Representations::Spec#project_js_files and #project_css_files, which can be overridden, so the javascript include mechanism is not needed.
+- Better error message when running using Selenium.
+
+0.3.3
+- Fixed for latest version of Selenium, Rack, and Thin
+
+0.3.2
+- Upgrading to ScrewUnit 0.3.2
+
+0.3.1
+- Client accepts selenium_server_start_command parameter, which allows the user to parameterize the selenium_server_start_command
+- Added support for running specs in Internet Explorer via POST /runners/iexplore
+- Resource file download performance improvements via caching and chunked sending
+- Fixed false positive bug when Client connection times out
+
+0.3.0
+- Uses ScrewUnit 0.3.0
+
+0.1.0
+- Initial Release

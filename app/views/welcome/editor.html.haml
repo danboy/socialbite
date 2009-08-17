@@ -1,0 +1,13 @@
+#grid
+  .main
+    %textarea#content
+    =submit_tag "submit"
+  .rail
+-content_for :onReady do
+  :plain
+    Event.observe(window, 'load', function() {
+      var editor = WysiHat.Editor.attach('content');
+      var ribbon = new Toolbar(editor);
+      ribbon.addButtonSet(WysiHat.Toolbar.ButtonSets.Advanced);
+    });
+

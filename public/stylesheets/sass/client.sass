@@ -1,0 +1,42 @@
+body
+  #head
+    :width= !grid+"em"
+    :margin 0 auto
+    :text-align left
+    +clearfix
+    :display block
+    :clear both
+    :text-align center
+    h1
+      :background url(/images/socialbite-holding.jpg) no-repeat center
+      :height 43em
+      :text-indent -999em
+      :font-size 1em
+  #grid
+    :margin 0 auto
+    :text-align center
+    .main,
+    .rail,
+    .page,
+    .full_page,
+    .column
+      :background-color= !background_color
+      :text-align center
+      +rounded
+    form
+      :width 40em
+      :margin 0 auto
+    .editor
+      :border .1em solid #333
+    ul.toolbar
+      li
+        :font-size 1em
+        :display block
+        :float left
+        :width 3.2em
+        :height 3.2em
+        :border .1em solid #666
+        :margin .2em
+        :overflow hidden
+        :cursor pointer
+

@@ -1,0 +1,16 @@
+-form_for @questionaire do |f|
+  %div
+    = f.label :vendor, "Vendor Name"
+    = f.text_field :vendor
+  %div
+    = f.label :description, "Tell us about yourself."
+    = f.text_area :description
+  %div
+    = f.label :website, "your website URL"
+    = f.text_field :website
+  %div
+    = f.label :email
+    = f.text_field :email
+  %div
+    = f.submit
+

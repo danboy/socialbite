@@ -1,0 +1,8 @@
+%h1 All vendors
+%ul
+-@questionnaires.each do |qa|
+  %li
+    %h2= link_to qa.vendor, :controller => :questionaires, :action => :show, :id => qa.id
+
+= link_to "new", :controller => :questionaires, :action => :new
+

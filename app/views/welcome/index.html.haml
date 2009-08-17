@@ -1,0 +1,15 @@
+#grid
+  .main
+    %h1=@page.name
+    =render :partial => "pages/blog_post"
+  .rail
+    %form{ :action=>'http://madmimi.com/signups/subscribe/2622', :method=>'post'}
+      %div
+        =label :signup, :name
+        =text_field :signup, :name
+      %div
+        =label :signup, :email
+        =text_field :signup, :email
+      %div
+        =submit_tag
+

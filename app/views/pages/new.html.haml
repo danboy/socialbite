@@ -1,0 +1,23 @@
+%h1 Create A page
+
+- form_for(@page) do |f|
+  = f.error_messages
+  %div
+    = f.label :name
+    = f.text_field :name
+  %div
+    = f.label :page_type
+    = f.select :page_type, {"blog" => 1, "page" => 0}
+    /= f.hidden_field :user_id, :value => current_user.login
+  %div
+    = f.label :default_page
+    = f.check_box :default_page
+  %div
+    = f.submit "Create"
+= link_to 'Back', pages_path
+-# controllers = get_controllers
+-#%h1= controllers.class
+-#%ul
+-#  - controllers.each do |controller|
+-#    %li= controller
+

@@ -1,0 +1,23 @@
+%h1
+  Add a new Item
+-form_for(@item, :html => { :multipart => true }) do |f|
+  %div
+    =f.label :page_id, "which page should it be on?"
+    = collection_select :item, :page_id, @pages, :id, :name
+  %div
+    =f.label :title
+    =f.text_field :title
+  %div
+    =f.label :body
+    =f.text_area :body, :id => "content"
+
+  %div
+    =f.submit "Create", :id => "trigger"
+-content_for :onReady do
+  :plain
+    Event.observe(window, 'load', function() {
+      var editor = WysiHat.Editor.attach('content');
+      var ribbon = new Toolbar(editor);
+      ribbon.addButtonSet(WysiHat.Toolbar.ButtonSets.Advanced);
+    });
+

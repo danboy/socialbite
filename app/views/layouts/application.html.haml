@@ -1,0 +1,20 @@
+- if !ie?
+  !!! XML
+!!! Strict
+%html
+  %head
+    = stylesheet_link_tag 'tenplate'
+    %link{'rel' => "alternate", 'type' => "application/rss+xml", 'title' => "RSS 2.0", 'href' => "http://www.pinmonkey.com/pages/1.rss"}
+  %body
+    #head
+      = flash_messages
+    #grid
+      = yield
+    - # include javascript
+    = javascript_include_tag "prototype","effects","controls","dragdrop","wysihat","wysihat-extended","jquery","jquery.form","zebra"
+    :javascript
+      jQuery.noConflict();
+      document.observe("dom:loaded",function(ev){
+        #{yield :onReady}
+      });
+
