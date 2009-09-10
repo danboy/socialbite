@@ -9,8 +9,15 @@ body
     h1
       :background url(/images/logo.jpg) no-repeat center
       :height 20em
-      :text-indent -999em
       :font-size 1em
+      :width 20em
+      :margin 1em auto 0
+      a
+        :display block
+        :width 100%
+        :height 100%
+        :text-indent -999em
+        :outline none
     ul
       :margin 0 1em
       li
@@ -18,6 +25,8 @@ body
         :margin 0
         :display block
         :float left
+        a
+          :color #666
   #grid
     :margin 0 auto
     .main,
@@ -29,23 +38,88 @@ body
       :vertical-align top
       :display block
       :float left
+      h2:first-child
+        :margin-top 0
     .main
       +column_calc((!grid/13)*7)
-      :border 1px solid #CCC
+      :border .1em solid #CCC
       ul
         li
           :list-style-position inside
+      h2
+        :text-align center
+        :color #333
+        :margin= ((!line_height/(!font_size + .6))/2)+"em" 0
+        :border-bottom .01em solid #333
+        :font-size= !font_size + .6+"em"
+        :padding= ((!line_height/(!font_size + .6))/2)+"em" 0
+        :font-weight normal
+      h4
+        :margin-top 0
+        :font-weight normal
+        :font-size 1.6em
+      ul.tags
+        li
+          :display inline-block
+          :margin 0
+          :font-size 1.1em
+          &:after
+            :content ", "
+          &:last-child:after
+            :content ""
+      .post
+        p:last-child
+          :margin-bottom 0
+      #splash_pic
+        :width 47.2em
+        :height 25em
+        :background #DDD
     .rail
-      +column_calc((!grid/13)*3)
-      :border 1px solid #CCC
+      +column_calc(((!grid/13)*3)+(!line_height/6))
+      :border .1em solid #CCC
       p,label,input
         :font-size .95em
       form
         :padding 0
+      ul.tag_cloud
+        :width 100%
+        :margin=  !page_padding+"em" 0
+        li
+          :display inline-block
+          :margin 0
+          &.tag_level-1
+            :font_size 1em
+          &.tag_level-2
+            :font_size 1.2em
+          &.tag_level-3
+            :font-size 1.4em
+          &.tag_level-4
+            :font-size 1.6em
+          &.tag_level-5
+            :font-size 1.8em
+            :font-weight bold
+          a
+            :color #666
+            &:hover
+              :color= !link_color
     .column_one
       :margin-right 0
     .column_two
       :margin-left 0
+      ul.previous
+        :margin 0 -.4em
+        li
+          :display block
+          :float left
+          :width 3.5em
+          :height 3.5em
+          :background #999
+          :margin .25em
+      h2.archives
+        :margin 1em
+        :padding .5em
+        :border-top .1em solid #CCC
+        :border-bottom .1em solid #CCC
     form
       :margin 0 auto
     .editor

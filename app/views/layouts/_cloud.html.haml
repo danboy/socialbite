@@ -1,0 +1,8 @@
+%ul.tag_cloud
+  -get_tags
+  -if @tags.empty?
+    %li no tags
+  -else 
+    -tag_cloud(@tags, @levels) do |tag, level|
+      %li{:class => "tag_#{level}"}
+        =link_to tag, :controller => :items, :action => :tag, :id => tag.name

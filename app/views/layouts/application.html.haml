@@ -1,6 +1,4 @@
-- if !ie?
-  !!! XML
-!!! Strict
+!!!
 %html
   %head
     = stylesheet_link_tag 'tenplate'
@@ -8,16 +6,21 @@
   %body
     #head
       = flash_messages
-      %h1 socialbite
+      %h1 
+        =link_to "socialbite", root_path
       %ul
         %li= link_to "questionairres", :controller => :questionaires, :action => :index
     #grid
       .rail.column_one
         = yield :column_one
+        = render :partial => "layouts/cloud"
+      
       .main
         = yield
+      
       .rail.column_two
-        = yield :column_three
+        = yield :column_two
+
     - # include javascript
     = javascript_include_tag "prototype","effects","controls","dragdrop","wysihat","wysihat-extended","jquery","jquery.form","zebra"
     :javascript

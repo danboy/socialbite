@@ -117,7 +117,7 @@ body {
       font-size: 1em;
       margin: 0; }
   body a {
-    color: #2b802a;
+    color: #a1381a;
     text-decoration: none; }
     body a:hover {
       text-decoration: underline; }
@@ -202,7 +202,7 @@ form {
     border: .1em solid #900;
     font-weight: inherit;
     margin: 0 0 1.125em ;
-    border: .1em solid #2b802a; }
+    border: .1em solid #a1381a; }
   form textarea {
     height: 8em;
     width: 100%; }
@@ -318,7 +318,7 @@ form.justify textarea {
   height: 4em; }
   form.justify textarea:focus {
     background: #FFF;
-    border-color: #2b802a; }
+    border-color: #a1381a; }
 form.justify select {
   margin: 0 0 0 30%; }
 
@@ -329,7 +329,7 @@ p textarea {
 
 #grid,
 .grid {
-  width: 94.2em;
+  width: 94em;
   padding: 0 0.9em;
   display: inline-block;
   display: block; }
@@ -344,12 +344,12 @@ p textarea {
     height: 1px; }
   * html #grid,
   * html .grid {
-    width: 97.8em; }
+    width: 97.6em; }
 
 /* Project Specific SASS
  * Include your project sass and overides here */
 body #head {
-  width: 94.2em;
+  width: 94em;
   margin: 0 auto;
   text-align: left;
   display: inline-block;
@@ -365,8 +365,15 @@ body #head {
   body #head h1 {
     background: url(/images/logo.jpg) no-repeat center;
     height: 20em;
-    text-indent: -999em;
-    font-size: 1em; }
+    font-size: 1em;
+    width: 20em;
+    margin: 1em auto 0; }
+    body #head h1 a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      text-indent: -999em;
+      outline: none; }
   body #head ul {
     margin: 0 1em; }
     body #head ul li {
@@ -374,6 +381,8 @@ body #head {
       margin: 0;
       display: block;
       float: left; }
+      body #head ul li a {
+        color: #666; }
 body #grid {
   margin: 0 auto; }
   body #grid .main,
@@ -385,16 +394,22 @@ body #grid {
     vertical-align: top;
     display: block;
     float: left; }
+    body #grid .main h2:first-child,
+    body #grid .rail h2:first-child,
+    body #grid .page h2:first-child,
+    body #grid .full_page h2:first-child,
+    body #grid .column h2:first-child {
+      margin-top: 0; }
   body #grid .main {
-    width: 47.123em;
+    width: 47.215em;
     padding: 0.9em;
     margin: 0.9em;
-    border: 0em none #2b802a;
+    border: 0.1em none #a1381a;
     -moz-border-radius: 0.2em;
     -webkit-border-radius: 0.2em;
     -khtml-border-radius: 0.2em;
     display: inline-block;
-    border: 1px solid #CCC; }
+    border: .1em solid #CCC; }
     body #grid .main:after {
       content: ".";
       height: 0;
@@ -404,16 +419,42 @@ body #grid {
       height: 1px; }
     body #grid .main ul li {
       list-style-position: inside; }
+    body #grid .main h2 {
+      text-align: center;
+      color: #333;
+      margin: 0.409em 0;
+      border-bottom: .01em solid #333;
+      font-size: 2.2em;
+      padding: 0.409em 0;
+      font-weight: normal; }
+    body #grid .main h4 {
+      margin-top: 0;
+      font-weight: normal;
+      font-size: 1.6em; }
+    body #grid .main ul.tags li {
+      display: inline-block;
+      margin: 0;
+      font-size: 1.1em; }
+      body #grid .main ul.tags li:after {
+        content: ", "; }
+      body #grid .main ul.tags li:last-child:after {
+        content: ""; }
+    body #grid .main .post p:last-child {
+      margin-bottom: 0; }
+    body #grid .main #splash_pic {
+      width: 47.2em;
+      height: 25em;
+      background: #DDD; }
   body #grid .rail {
-    width: 18.138em;
+    width: 18.592em;
     padding: 0.9em;
     margin: 0.9em;
-    border: 0em none #2b802a;
+    border: 0.1em none #a1381a;
     -moz-border-radius: 0.2em;
     -webkit-border-radius: 0.2em;
     -khtml-border-radius: 0.2em;
     display: inline-block;
-    border: 1px solid #CCC; }
+    border: .1em solid #CCC; }
     body #grid .rail:after {
       content: ".";
       height: 0;
@@ -425,10 +466,45 @@ body #grid {
       font-size: .95em; }
     body #grid .rail form {
       padding: 0; }
+    body #grid .rail ul.tag_cloud {
+      width: 100%;
+      margin: 1.8em 0; }
+      body #grid .rail ul.tag_cloud li {
+        display: inline-block;
+        margin: 0; }
+        body #grid .rail ul.tag_cloud li.tag_level-1 {
+          font_size: 1em; }
+        body #grid .rail ul.tag_cloud li.tag_level-2 {
+          font_size: 1.2em; }
+        body #grid .rail ul.tag_cloud li.tag_level-3 {
+          font-size: 1.4em; }
+        body #grid .rail ul.tag_cloud li.tag_level-4 {
+          font-size: 1.6em; }
+        body #grid .rail ul.tag_cloud li.tag_level-5 {
+          font-size: 1.8em;
+          font-weight: bold; }
+        body #grid .rail ul.tag_cloud li a {
+          color: #666; }
+          body #grid .rail ul.tag_cloud li a:hover {
+            color: #a1381a; }
   body #grid .column_one {
     margin-right: 0; }
   body #grid .column_two {
     margin-left: 0; }
+    body #grid .column_two ul.previous {
+      margin: 0 -.4em; }
+      body #grid .column_two ul.previous li {
+        display: block;
+        float: left;
+        width: 3.5em;
+        height: 3.5em;
+        background: #999;
+        margin: .25em; }
+    body #grid .column_two h2.archives {
+      margin: 1em;
+      padding: .5em;
+      border-top: .1em solid #CCC;
+      border-bottom: .1em solid #CCC; }
   body #grid form {
     margin: 0 auto; }
   body #grid .editor {

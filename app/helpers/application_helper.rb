@@ -1,5 +1,7 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
+  include TagsHelper
+  
   def ie?
     m = /MSIE\s+([0-9, \.]+)/.match(request.user_agent)
     unless m.nil?
@@ -24,6 +26,11 @@ FLASH_NOTICE_KEYS = [:error, :notice, :warning]
     else
       message % item
     end
+  end
+  
+  def get_tags
+    @tags = Item.tag_counts(:limit => 32, :order => "count DESC" )
+    @levels = (1 .. 5).map { |i| "level-#{i}" }
   end
 end
 
