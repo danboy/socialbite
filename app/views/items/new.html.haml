@@ -1,6 +1,6 @@
 %h1
   Add a new Item
--form_for(@item, :html => { :multipart => true }) do |f|
+-form_for(@item, :html => { :multipart => true , :id => "editor_form"}) do |f|
   %div
     =f.label :page_id, "which page should it be on?"
     = collection_select :item, :page_id, @pages, :id, :name
@@ -16,8 +16,13 @@
 -content_for :onReady do
   :plain
     Event.observe(window, 'load', function() {
-      var editor = WysiHat.Editor.attach('content');
-      var ribbon = new Toolbar(editor);
+      myEditor = new WysiHat.Editor.attach('content');
+      var ribbon = new Toolbar(myEditor);
       ribbon.addButtonSet(WysiHat.Toolbar.ButtonSets.Advanced);
+      $('editor_form').observe('submit',function(ev){
+        ev.stop();
+        myEditor.save();
+        $('editor_form').submit();
+      });
     });
 

@@ -1,8 +1,10 @@
 %h1 All vendors
 %ul
--@questionnaires.each do |qa|
-  %li
-    %h2= link_to qa.vendor, :controller => :questionaires, :action => :show, :id => qa.id
+  -@questionnaires.each do |qa|
+    %li
+      %h2
+        = link_to qa.vendor, :controller => :questionaires, :action => :show, :id => qa.id
+      = link_to "create post", :controller => :questionaires, :action => :create_post, :id => qa.id
 
 = link_to "new", :controller => :questionaires, :action => :new
 

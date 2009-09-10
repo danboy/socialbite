@@ -26,5 +26,24 @@ class QuestionairesController < ApplicationController
     end
   end
 
+  def create_post
+
+    @content = Questionaire.find(params[:id])
+    @item = Item.new
+    @item.title = @content.vendor
+    @item.body = "
+    <ul>
+      <li>
+        #{@content.website}
+      </li>
+    </ul>
+    <p>#{@content.description}</p>
+
+    "
+    @item.page_id=1
+    @item.save
+    redirect_to(@item)
+  end
+
 end
 

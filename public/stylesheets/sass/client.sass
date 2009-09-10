@@ -6,25 +6,47 @@ body
     +clearfix
     :display block
     :clear both
-    :text-align center
     h1
-      :background url(/images/socialbite-holding.jpg) no-repeat center
-      :height 43em
+      :background url(/images/logo.jpg) no-repeat center
+      :height 20em
       :text-indent -999em
       :font-size 1em
+    ul
+      :margin 0 1em
+      li
+        :list-style none
+        :margin 0
+        :display block
+        :float left
   #grid
     :margin 0 auto
-    :text-align center
     .main,
     .rail,
     .page,
     .full_page,
     .column
       :background-color= !background_color
-      :text-align center
-      +rounded
+      :vertical-align top
+      :display block
+      :float left
+    .main
+      +column_calc((!grid/13)*7)
+      :border 1px solid #CCC
+      ul
+        li
+          :list-style-position inside
+    .rail
+      +column_calc((!grid/13)*3)
+      :border 1px solid #CCC
+      p,label,input
+        :font-size .95em
+      form
+        :padding 0
+    .column_one
+      :margin-right 0
+    .column_two
+      :margin-left 0
     form
-      :width 40em
       :margin 0 auto
     .editor
       :border .1em solid #333
@@ -39,4 +61,5 @@ body
         :margin .2em
         :overflow hidden
         :cursor pointer
+        :list-style none
 

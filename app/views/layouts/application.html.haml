@@ -8,8 +8,16 @@
   %body
     #head
       = flash_messages
+      %h1 socialbite
+      %ul
+        %li= link_to "questionairres", :controller => :questionaires, :action => :index
     #grid
-      = yield
+      .rail.column_one
+        = yield :column_one
+      .main
+        = yield
+      .rail.column_two
+        = yield :column_three
     - # include javascript
     = javascript_include_tag "prototype","effects","controls","dragdrop","wysihat","wysihat-extended","jquery","jquery.form","zebra"
     :javascript
