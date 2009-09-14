@@ -338,7 +338,9 @@ p textarea {
     content: ".";
     height: 0;
     clear: both;
-    visibility: hidden; }
+    display: block;
+    visibility: hidden;
+    line-height: 0; }
   * html #grid,
   * html .grid {
     height: 1px; }
@@ -359,7 +361,9 @@ body #head {
     content: ".";
     height: 0;
     clear: both;
-    visibility: hidden; }
+    display: block;
+    visibility: hidden;
+    line-height: 0; }
   * html body #head {
     height: 1px; }
   body #head h1 {
@@ -382,9 +386,32 @@ body #head {
       display: block;
       float: left; }
       body #head ul li a {
-        color: #666; }
+        color: #666;
+        text-transform: uppercase;
+        color: #333;
+        font-family: Times; }
+  body #head ul#nav {
+    float: left; }
+    body #head ul#nav li {
+      margin-right: .5em; }
+  body #head ul#categories {
+    float: right; }
+    body #head ul#categories li {
+      margin-left: 1em; }
 body #grid {
-  margin: 0 auto; }
+  display: inline-block;
+  display: block;
+  margin: 0 auto;
+  padding: 0; }
+  body #grid:after {
+    content: ".";
+    height: 0;
+    clear: both;
+    display: block;
+    visibility: hidden;
+    line-height: 0; }
+  * html body #grid {
+    height: 1px; }
   body #grid .main,
   body #grid .rail,
   body #grid .page,
@@ -414,7 +441,9 @@ body #grid {
       content: ".";
       height: 0;
       clear: both;
-      visibility: hidden; }
+      display: block;
+      visibility: hidden;
+      line-height: 0; }
     * html body #grid .main {
       height: 1px; }
     body #grid .main ul li {
@@ -459,7 +488,9 @@ body #grid {
       content: ".";
       height: 0;
       clear: both;
-      visibility: hidden; }
+      display: block;
+      visibility: hidden;
+      line-height: 0; }
     * html body #grid .rail {
       height: 1px; }
     body #grid .rail p, body #grid .rail label, body #grid .rail input {
@@ -487,6 +518,15 @@ body #grid {
           color: #666; }
           body #grid .rail ul.tag_cloud li a:hover {
             color: #a1381a; }
+    body #grid .rail ul.social li {
+      list-style: none inside;
+      padding: 0 0 0 1.4em;
+      margin: 0 0 .5em;
+      background: url(/images/icons/facebook.png) no-repeat left center; }
+      body #grid .rail ul.social li.facebook {
+        background-image: url(/images/icons/facebook-16x16.png); }
+      body #grid .rail ul.social li.twitter {
+        background-image: url(/images/icons/twitter-16x16.png); }
   body #grid .column_one {
     margin-right: 0; }
   body #grid .column_two {

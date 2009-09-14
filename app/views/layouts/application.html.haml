@@ -8,11 +8,23 @@
       = flash_messages
       %h1 
         =link_to "socialbite", root_path
-      %ul
-        %li= link_to "questionairres", :controller => :questionaires, :action => :index
+      %ul#nav
+        -if current_user && current_user.has_role?("admin")
+          %li= link_to "questionairres", :controller => :questionaires, :action => :index
+          %li= link_to "create a post", :controller => :items, :action => :new
+          %li= link_to "logout", :controller => :logout
+        %li= link_to "about", :controller => :pages, :action => :about
+        %li= link_to "contact", :controller => :pages, :action => :contact
+      %ul#categories
+        %li= link_to "grow", :controller => :items, :action => :find, :id => "grow"
+        %li= link_to "eat", :controller => :items, :action => :find, :id => "eat"
+        %li= link_to "buy", :controller => :items, :action => :find, :id => "buy"
+        %li= link_to "drink", :controller => :items, :action => :find, :id => "drink"
+        %li= link_to "events", :controller => :items, :action => :find, :id => "events"
     #grid
       .rail.column_one
         = yield :column_one
+        = render :partial => "layouts/follow"
         = render :partial => "layouts/cloud"
       
       .main

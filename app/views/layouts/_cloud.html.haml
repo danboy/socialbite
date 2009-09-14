@@ -5,4 +5,4 @@
   -else 
     -tag_cloud(@tags, @levels) do |tag, level|
       %li{:class => "tag_#{level}"}
-        =link_to tag, :controller => :items, :action => :tag, :id => tag.name
+        =link_to tag, :controller => :items, :action => :find, :id => tag.name

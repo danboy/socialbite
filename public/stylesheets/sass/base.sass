@@ -186,12 +186,14 @@ body
 =clearfix
   display: inline-block
   &:after
-    content: "."
-    height: 0
-    clear: both
-    visibility: hidden
+    :content "."
+    :height 0
+    :clear both
+    :display block
+    :visibility hidden
+    :line-height 0
   * html &
-    height: 1px
+    :height 1px
 
 * html,
 * html body

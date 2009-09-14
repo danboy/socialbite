@@ -27,8 +27,22 @@ body
         :float left
         a
           :color #666
+          :text-transform uppercase
+          :color #333
+          :font-family Times
+    ul#nav
+      :float left
+      li
+        :margin-right .5em
+    ul#categories
+      :float right
+      li
+        :margin-left 1em
   #grid
+    +clearfix
+    :display block
     :margin 0 auto
+    :padding 0
     .main,
     .rail,
     .page,
@@ -102,6 +116,16 @@ body
             :color #666
             &:hover
               :color= !link_color
+      ul.social
+        li
+          :list-style none inside
+          :padding 0 0 0 1.4em
+          :margin 0 0 .5em
+          :background url(/images/icons/facebook.png) no-repeat left center
+          &.facebook
+            :background-image url(/images/icons/facebook-16x16.png)
+          &.twitter
+            :background-image url(/images/icons/twitter-16x16.png)
     .column_one
       :margin-right 0
     .column_two

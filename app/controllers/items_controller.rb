@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-
+  require_role "admin", :for => [:new,:create] # don't allow contractors to destroy
   def new
     @pages = Page.all
     @item = Item.new
@@ -20,6 +20,9 @@ class ItemsController < ApplicationController
   end
   def show
     @item = Item.find(params[:id])
+  end
+  def find
+    @items = Item.tagged_with(params[:id], :on => :tags).by_date
   end
 end
 
