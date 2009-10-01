@@ -13,7 +13,9 @@
   %div
     =f.label :tag_list
     =f.text_field :tag_list
-
+  %div
+    =label_tag :feature
+    =check_box :article, :feature
   %div
     =f.submit "Create", :id => "trigger"
 -content_for :onReady do

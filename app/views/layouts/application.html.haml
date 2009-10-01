@@ -7,7 +7,7 @@
     #head
       = flash_messages
       %h1 
-        =link_to "socialbite", root_path
+        =link_to "lovers of food<br />local organic and sustainably produced.", root_path
       %ul#nav
         -if current_user && current_user.has_role?("admin")
           %li= link_to "questionairres", :controller => :questionaires, :action => :index

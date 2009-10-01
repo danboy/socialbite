@@ -7,6 +7,9 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(params[:item])
     @page = Page.find(@item.page_id)
+    if params[:article][:feature] == true
+      @item.feature!
+    end
     respond_to do |format|
       if @item.save
         flash[:notice] = 'Page was successfully created.'

@@ -10,7 +10,7 @@ on line 3 of /home/dan/Projects/socialbite/www/public/stylesheets/sass/client.sa
 6:     +clearfix
 7:     :display block
 8:     :clear both
-9:     h1
+9:     :padding-bottom 1em
 
 
 Backtrace:
@@ -98,4 +98,4 @@ script/server:3
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Sass::SyntaxError: Undefined variable: \"!grid\".\A on line 3 of /home/dan/Projects/socialbite/www/public/stylesheets/sass/client.sass\A \A 1: body\A 2:   #head\A 3:     :width= !grid+\"em\"\A 4:     :margin 0 auto\A 5:     :text-align left\A 6:     +clearfix\A 7:     :display block\A 8:     :clear both\A 9:     h1\A "; }
+  content: "Sass::SyntaxError: Undefined variable: \"!grid\".\A on line 3 of /home/dan/Projects/socialbite/www/public/stylesheets/sass/client.sass\A \A 1: body\A 2:   #head\A 3:     :width= !grid+\"em\"\A 4:     :margin 0 auto\A 5:     :text-align left\A 6:     +clearfix\A 7:     :display block\A 8:     :clear both\A 9:     :padding-bottom 1em\A "; }

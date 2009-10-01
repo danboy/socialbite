@@ -9,7 +9,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090910032540) do
+ActiveRecord::Schema.define(:version => 20090914220647) do
+
+  create_table "featured_periods", :force => true do |t|
+    t.integer  "featurable_id"
+    t.string   "featurable_type"
+    t.datetime "starts_at",       :null => false
+    t.datetime "expires_at",      :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
   create_table "items", :force => true do |t|
     t.string   "title"
