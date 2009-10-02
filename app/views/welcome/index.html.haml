@@ -13,13 +13,8 @@
 -content_for :column_two do
   %h2 Previous posts
   %ul.previous
-    %li
-    %li
-    %li
-    %li
-    %li
-    %li
-    %li
-    %li
-    %li
+    -get_previous_items.each_with_index do |item, index|
+      -if index != 0
+        %li
+          =link_to image_tag(item.splash.url(:thumb)), item
   %h2.archives Archives

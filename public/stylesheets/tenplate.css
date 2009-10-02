@@ -549,7 +549,8 @@ body #grid {
         width: 4em;
         height: 4em;
         background: #999;
-        margin: .25em; }
+        margin: .25em;
+        overflow: hidden; }
     body #grid .column_two h2.archives {
       margin: 1em;
       padding: .5em;

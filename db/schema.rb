@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090914220647) do
+ActiveRecord::Schema.define(:version => 20091002170452) do
 
   create_table "featured_periods", :force => true do |t|
     t.integer  "featurable_id"
@@ -27,6 +27,10 @@ ActiveRecord::Schema.define(:version => 20090914220647) do
     t.integer  "page_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "splash_file_name"
+    t.string   "splash_content_type"
+    t.integer  "splash_file_size"
+    t.datetime "splash_updated_at"
   end
 
   create_table "pages", :force => true do |t|
@@ -100,5 +104,14 @@ ActiveRecord::Schema.define(:version => 20090914220647) do
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true
+
+  create_table "wysihat_files", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
+  end
 
 end

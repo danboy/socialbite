@@ -1,8 +1,11 @@
 !!!
 %html
   %head
-    = stylesheet_link_tag 'tenplate'
-    %link{'rel' => "alternate", 'type' => "application/rss+xml", 'title' => "RSS 2.0", 'href' => "http://www.pinmonkey.com/pages/1.rss"}
+    = stylesheet_link_tag 'tenplate','facebox','wysihat'
+    %link{'rel' => "alternate", 'type' => "application/rss+xml", 'title' => "RSS 2.0", 'href' => "http://www.socialbite.com/pages/1.rss"}
+    - # include javascript
+    = javascript_include_tag "prototype","effects","controls","dragdrop","wysihat","facebox"
+
   %body
     #head
       = flash_messages
@@ -32,11 +35,8 @@
       
       .rail.column_two
         = yield :column_two
-
-    - # include javascript
-    = javascript_include_tag "prototype","effects","controls","dragdrop","wysihat","wysihat-extended","jquery","jquery.form","zebra"
     :javascript
-      jQuery.noConflict();
+      //jQuery.noConflict();
       document.observe("dom:loaded",function(ev){
         #{yield :onReady}
       });

@@ -1,3 +1,10 @@
+-if @item.splash.file?
+  =image_tag @item.splash.url(:main), :id => 'splash_pic'
 %h1
   =@item.title
+%h4= "Created #{time_ago_in_words(@item.created_at)} ago"
+.post= @item.body
+%ul.tags
+  -@item.tags.each do |tag|
+    %li= tag
 

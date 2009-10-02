@@ -28,6 +28,12 @@ FLASH_NOTICE_KEYS = [:error, :notice, :warning]
     end
   end
   
+  def get_previous_items
+    
+    @items = Item.all(:limit => 10, :order => 'id DESC')
+    
+  end
+  
   def get_tags
     @tags = Item.tag_counts(:limit => 32, :order => "count DESC" )
     @levels = (1 .. 5).map { |i| "level-#{i}" }

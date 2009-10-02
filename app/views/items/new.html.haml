@@ -8,8 +8,11 @@
     =f.label :title
     =f.text_field :title
   %div
+    =f.label :splash, "Feature Image"
+    =f.file_field :splash
+  %div
     =f.label :body
-    =f.text_area :body, :id => "content"
+    =f.wysihat_editor  :body
   %div
     =f.label :tag_list
     =f.text_field :tag_list
@@ -18,16 +21,4 @@
     =check_box :article, :feature
   %div
     =f.submit "Create", :id => "trigger"
--content_for :onReady do
-  :plain
-    Event.observe(window, 'load', function() {
-      myEditor = new WysiHat.Editor.attach('content');
-      var ribbon = new Toolbar(myEditor);
-      ribbon.addButtonSet(WysiHat.Toolbar.ButtonSets.Advanced);
-      $('editor_form').observe('submit',function(ev){
-        ev.stop();
-        myEditor.save();
-        $('editor_form').submit();
-      });
-    });
 
