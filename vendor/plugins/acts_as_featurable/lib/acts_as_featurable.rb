@@ -31,7 +31,7 @@ module SpinBits
       # This module contains instance methods
       module InstanceMethods
         # Helper method to feature a model
-        def feature!(expires=1.month.from_now, starts=Time.now)
+        def feature!(expires=1.month.from_now, starts=1.day.ago)
           self.featured_periods.create(:starts_at  => starts,
                                        :expires_at => expires)
         end

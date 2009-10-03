@@ -47,6 +47,14 @@ body
       :float right
       li
         :margin-left 1em
+    ul#admin
+      :width 100%
+      +clearfix
+      :background #666
+      :border .1em solid #CCC
+      :border-top none
+      li
+        :margin .5em
   #grid
     +clearfix
     :display block
@@ -99,6 +107,10 @@ body
         :background #fff
         :padding .5em 
         :border .1em solid #CCC
+    ul.inline
+      :margin 1em 0 0
+      li
+        :display inline
     .rail
       +column_calc(((!grid/13)*3)+(!line_height/6))
       p,label,input

@@ -1,0 +1,25 @@
+%h1
+  Edit
+  = "\"#{@item.title}\""
+-form_for(@item, :html => { :multipart => true , :id => "editor_form"}) do |f|
+  %div
+    =f.label :page_id, "which page should it be on?"
+    = collection_select :item, :page_id, @pages, :id, :name
+  %div
+    =f.label :title
+    =f.text_field :title
+  %div
+    =f.label :splash, "Feature Image"
+    =f.file_field :splash
+  %div
+    =f.label :body
+    =f.wysihat_editor :body
+  %div
+    =f.label :tag_list
+    =f.text_field :tag_list
+  %div
+    =label_tag :feature
+    =check_box :article, :feature
+  %div
+    =f.submit "Create", :id => "trigger"
+

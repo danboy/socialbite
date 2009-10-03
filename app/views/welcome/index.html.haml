@@ -1,3 +1,4 @@
+=render :partial => "welcome/feature"
 =render :partial => "pages/blog_post"
 -content_for :column_one do
   %h2 Sign up for our newsletter.
@@ -14,7 +15,7 @@
   %h2 Previous posts
   %ul.previous
     -get_previous_items.each_with_index do |item, index|
-      -if index != 0
+      -unless item == @feature
         %li
           =link_to image_tag(item.splash.url(:thumb)), item
   %h2.archives Archives

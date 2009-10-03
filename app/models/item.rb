@@ -8,6 +8,15 @@ class Item < ActiveRecord::Base
   has_attached_file :splash,
                     :styles => { :main => "472x250#", :thumb => "60x60#" },
                     :default_url => "/images/default_:style_splash.jpg"
+  include AASM
+
+  aasm_initial_state :draft
+
+  aasm_state :published
+
+  aasm_event :publish do
+    transitions :to => :published, :from => [:draft]
+  end
 
 end
 

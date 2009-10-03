@@ -1,0 +1,12 @@
+%ul#items
+  -@items.each do |item|
+    %li
+      %h3= item.title
+      %ul.inline
+        -if item.featured?
+          %li=link_to "unfeature"
+        -else
+          %li=link_to "feature", :controller => :items, :action => :feature, :id => item.id
+        %li=link_to "edit", :controller => :items, :action => :edit, :id => item.id
+        %li=link_to "destroy", "/items/destroy/#{item.id}", :confirm => "are you sure you want to delete #{item.title}"
+%p=will_paginate @items

@@ -8,14 +8,16 @@
 
   %body
     #head
+      -if current_user && current_user.has_role?("admin")
+        %ul#admin
+          %li= link_to "questionairres", :controller => :questionaires, :action => :index
+          %li= link_to "create a post", :controller => :items, :action => :new
+          %li= link_to "edit posts", :controller => :items
+          %li= link_to "logout", :controller => :logout
       = flash_messages
       %h1 
         =link_to "lovers of food<br />local organic and sustainably produced.", root_path
       %ul#nav
-        -if current_user && current_user.has_role?("admin")
-          %li= link_to "questionairres", :controller => :questionaires, :action => :index
-          %li= link_to "create a post", :controller => :items, :action => :new
-          %li= link_to "logout", :controller => :logout
         %li= link_to "about", :controller => :pages, :action => :about
         %li= link_to "contact", :controller => :pages, :action => :contact
       %ul#categories

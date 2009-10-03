@@ -406,6 +406,23 @@ body #head {
     float: right; }
     body #head ul#categories li {
       margin-left: 1em; }
+  body #head ul#admin {
+    width: 100%;
+    display: inline-block;
+    background: #666;
+    border: .1em solid #CCC;
+    border-top: none; }
+    body #head ul#admin:after {
+      content: ".";
+      height: 0;
+      clear: both;
+      display: block;
+      visibility: hidden;
+      line-height: 0; }
+    * html body #head ul#admin {
+      height: 1px; }
+    body #head ul#admin li {
+      margin: .5em; }
 body #grid {
   display: inline-block;
   display: block;
@@ -484,6 +501,10 @@ body #grid {
       background: #fff;
       padding: .5em;
       border: .1em solid #CCC; }
+  body #grid ul.inline {
+    margin: 1em 0 0; }
+    body #grid ul.inline li {
+      display: inline; }
   body #grid .rail {
     width: 18.438em;
     padding: 0.9em;
