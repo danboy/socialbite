@@ -1,6 +1,7 @@
 body
   #head
     :width= !grid+"em"
+    :background #333
     :margin 0 auto
     :text-align left
     +clearfix
@@ -8,24 +9,18 @@ body
     :clear both
     :padding-bottom 1em
     h1
-      :background url(/images/logo-small.jpg) no-repeat center 2em
-      :height 20em
+      :background url(/images/logo.png) no-repeat center 2em
+      :height 16em
       :font-size 1em
-      :width 40em
-      :margin 1em auto 0
+      :width 30em
+      :margin -2em auto 0
       :position relative
       a
+        :text-indent -9999em
         :display block
         :width 100%
-        :font-size= !font_size+"em"
-        :font-family times
-        /:text-indent -999em
-        :text-align center
-        :color #333
-        :position absolute
-        :bottom 0
+        :height 100%
         :outline none
-        :margin-bottom -1.3em
     ul
       :margin 0 1em
       li
@@ -35,14 +30,16 @@ body
         :float left
         :font-weight bold
         a
-          :color #666
           :text-transform uppercase
-          :color #333
+          :color #FFF
           :font-family Times
-    ul#nav
+    a#tagline
       :float left
-      li
-        :margin-right .5em
+      :color #FFF
+      :font-family Times
+      :font-size 1.4em
+      :font-weight bold
+      :margin-left .5em
     ul#categories
       :float right
       li
@@ -50,15 +47,18 @@ body
     ul#admin
       :width 100%
       +clearfix
-      :background #666
+      :background #900
       :border .1em solid #CCC
-      :border-top none
+      :border none
+      :margin 0
       li
         :margin .5em
+        a
+          :color #FFF
   #grid
     +clearfix
     :display block
-    :margin 0 auto 
+    :margin 0 auto
     :padding 0
     :border-top .1em double #DDD
     .main,
@@ -105,7 +105,7 @@ body
         :width 47.2em
         :height 25em
         :background #fff
-        :padding .5em 
+        :padding .5em
         :border .1em solid #CCC
     ul.inline
       :margin 1em 0 0
@@ -148,6 +148,19 @@ body
             :background-image url(/images/icons/facebook-16x16.png)
           &.twitter
             :background-image url(/images/icons/twitter-16x16.png)
+      ul#nav
+        :float left
+        li
+          :list-style none
+          :margin 0 .5em 0 0
+          :display block
+          :float left
+          :font-weight bold
+          a
+            :color #666
+            :text-transform uppercase
+            :color #333
+            :font-family Times
     .column_one
       :margin-right 0
     .column_two
@@ -183,4 +196,3 @@ body
         :overflow hidden
         :cursor pointer
         :list-style none
-

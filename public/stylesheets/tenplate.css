@@ -352,6 +352,7 @@ p textarea {
  * Include your project sass and overides here */
 body #head {
   width: 94.2em;
+  background: #333;
   margin: 0 auto;
   text-align: left;
   display: inline-block;
@@ -368,23 +369,18 @@ body #head {
   * html body #head {
     height: 1px; }
   body #head h1 {
-    background: url(/images/logo-small.jpg) no-repeat center 2em;
-    height: 20em;
+    background: url(/images/logo.png) no-repeat center 2em;
+    height: 16em;
     font-size: 1em;
-    width: 40em;
-    margin: 1em auto 0;
+    width: 30em;
+    margin: -2em auto 0;
     position: relative; }
     body #head h1 a {
+      text-indent: -9999em;
       display: block;
       width: 100%;
-      font-size: 1.4em;
-      font-family: times;
-      text-align: center;
-      color: #333;
-      position: absolute;
-      bottom: 0;
-      outline: none;
-      margin-bottom: -1.3em; }
+      height: 100%;
+      outline: none; }
   body #head ul {
     margin: 0 1em; }
     body #head ul li {
@@ -394,14 +390,16 @@ body #head {
       float: left;
       font-weight: bold; }
       body #head ul li a {
-        color: #666;
         text-transform: uppercase;
-        color: #333;
+        color: #FFF;
         font-family: Times; }
-  body #head ul#nav {
-    float: left; }
-    body #head ul#nav li {
-      margin-right: .5em; }
+  body #head a#tagline {
+    float: left;
+    color: #FFF;
+    font-family: Times;
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-left: .5em; }
   body #head ul#categories {
     float: right; }
     body #head ul#categories li {
@@ -409,9 +407,10 @@ body #head {
   body #head ul#admin {
     width: 100%;
     display: inline-block;
-    background: #666;
+    background: #900;
     border: .1em solid #CCC;
-    border-top: none; }
+    border: none;
+    margin: 0; }
     body #head ul#admin:after {
       content: ".";
       height: 0;
@@ -423,6 +422,8 @@ body #head {
       height: 1px; }
     body #head ul#admin li {
       margin: .5em; }
+      body #head ul#admin li a {
+        color: #FFF; }
 body #grid {
   display: inline-block;
   display: block;
@@ -557,6 +558,19 @@ body #grid {
         background-image: url(/images/icons/facebook-16x16.png); }
       body #grid .rail ul.social li.twitter {
         background-image: url(/images/icons/twitter-16x16.png); }
+    body #grid .rail ul#nav {
+      float: left; }
+      body #grid .rail ul#nav li {
+        list-style: none;
+        margin: 0 .5em 0 0;
+        display: block;
+        float: left;
+        font-weight: bold; }
+        body #grid .rail ul#nav li a {
+          color: #666;
+          text-transform: uppercase;
+          color: #333;
+          font-family: Times; }
   body #grid .column_one {
     margin-right: 0; }
   body #grid .column_two {
