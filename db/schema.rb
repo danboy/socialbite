@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091002170452) do
+ActiveRecord::Schema.define(:version => 20091021170927) do
 
   create_table "featured_periods", :force => true do |t|
     t.integer  "featurable_id"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20091002170452) do
     t.string   "splash_content_type"
     t.integer  "splash_file_size"
     t.datetime "splash_updated_at"
+    t.string   "state"
   end
 
   create_table "pages", :force => true do |t|
