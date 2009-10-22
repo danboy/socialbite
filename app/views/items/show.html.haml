@@ -7,4 +7,10 @@
 %ul.tags
   -@item.tags.each do |tag|
     %li= tag
-
+%h2 add a comment
+= render :partial => "items/comment", :locals => {:commentable_item => @item}
+-@item.comments.each do |comment|
+  .comment
+    %h3= comment.title
+    %h5= "Created #{time_ago_in_words(comment.created_at)} ago"
+    %p= comment.comment

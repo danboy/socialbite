@@ -1,0 +1,26 @@
+%h2=@user.login
+- form_for @user do |f|
+  %fieldset
+    %legend
+      Your Details
+    %ol
+      %li
+        = f.label :login, 'Username'
+        = f.text_field :login
+      %li
+        = f.label :email
+        = f.text_field :email
+      %li
+        = f.label :password
+        = f.password_field :password
+      %li
+        = f.label :password_confirmation, 'Confirm Password'
+        = f.password_field :password_confirmation
+  %fieldset
+    %legend Roles
+    %ul.roles.clearfix
+      -@roles.each do |role|
+        %li
+          =f.label :role_ids, role.name
+          =check_box_tag "user[role_ids][]", role.id, @user.role_ids.include?(role.id), :id => "role_id_#{role.id}"
+  =f.submit

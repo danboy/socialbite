@@ -1,23 +1,23 @@
 class ItemsController < ApplicationController
-  require_role "admin", :for => [:edit,:new,:create, :feature, :unfeature, :index] # don't allow contractors to destroy
-  
+  require_role "admin", :for => [:edit,:publish,:draft,:new,:create, :feature, :unfeature, :index] # don't allow contractors to destroy
+
   def index
-  
+
     @items = Item.paginate :page => params[:page], :per_page => 10, :order =>"id desc"
 
   end
-  
+
   def edit
     @pages = Page.all
     @item = Item.find(params[:id])
-    
+
   end
-  
+
   def new
-  
+
     @pages = Page.all
     @item = Item.new
-    
+
   end
   def create
     @item = Item.new(params[:item])
@@ -34,11 +34,19 @@ class ItemsController < ApplicationController
     end
   end
   def show
-    @item = Item.find(params[:id])
+    @item = Item.find(params[:id],:conditions => "state = 'published'")
+    @comment = Comment.new
   end
+
+  def preview
+    @item = Item.find(params[:id])
+    @comment = Comment.new
+  end
+
   def find
     @items = Item.tagged_with(params[:id], :on => :tags).by_date
   end
+
   def feature
     @item = Item.find(params[:id])
     @items = Item.all
@@ -48,6 +56,19 @@ class ItemsController < ApplicationController
     @item.feature!
     redirect_to(:controller=>:items)
   end
+
+  def publish
+     @item = Item.find(params[:id])
+     @item.publish!
+     redirect_to :controller => :items
+  end
+
+  def draft
+     @item = Item.find(params[:id])
+     @item.draft!
+     redirect_to :controller => :items
+  end
+
   def update
     @item = Item.find(params[:id])
 
@@ -62,7 +83,11 @@ class ItemsController < ApplicationController
       end
     end
   end
-
+  def comment
+    @item  = Item.find(params[:id])
+    @item.add_comment Comment.new(params[:comment])
+    redirect_to :controller => :items, :action => :show, :id => params[:id]
+  end
   def destroy
     @item = Item.find(params[:id])
     @item.destroy
@@ -73,4 +98,3 @@ class ItemsController < ApplicationController
     end
   end
 end
-

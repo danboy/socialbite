@@ -1,8 +1,9 @@
 -if @feature && !@feature.nil?
   =link_to image_tag(@feature.splash.url(:main), :id => 'splash_pic'), :controller => :items, :action => :show, :id => @feature.id
-  %h2= @feature.title
+  %h2= link_to @feature.title, :controller => :items, :action => :show, :id => @feature.id
   %h4= "Created #{time_ago_in_words(@feature.created_at)} ago"
   .post= @feature.body
   %ul.tags
     -@feature.tags.each do |tag|
       %li= tag
+    %li= link_to "comments (#{@feature.comments.length})", {:controller => :items, :action => :show, :id => @feature.id}

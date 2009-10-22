@@ -1,0 +1,11 @@
+-form_for(:comment,  :url => {:controller => :items, :action => :comment, :id => commentable_item.id}, :html => {:id => "editor_form"}) do |f|
+  %div
+    =f.label :title
+    =f.text_field :title
+    -if current_user
+      =f.hidden_field :user_id, :value => current_user.id
+  %div
+    =f.label :comment
+    =f.wysihat_editor  :comment, :buttons => [:bold, :italic, :underline, :insert_ordered_list, :insert_unordered_list, :undo, :redo]
+  %div
+    =f.submit "Create", :id => "trigger"

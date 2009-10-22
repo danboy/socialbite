@@ -1,0 +1,7 @@
+-if current_user && current_user.has_role?("admin")
+  %ul#admin
+    %li= link_to "questionairres", :controller => :questionaires, :action => :index
+    %li= link_to "create a post", :controller => :items, :action => :new
+    %li= link_to "edit posts", :controller => :items
+    %li= link_to "edit users", :controller => :users
+    %li= link_to "logout", :controller => :logout

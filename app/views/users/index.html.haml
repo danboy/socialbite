@@ -1,0 +1,7 @@
+%ul
+-@users.each do |user|
+  %li
+    =user.login
+    =link_to "edit", :controller => :users, :action => :edit, :id => user.id
+    -if user.activated_at.nil?
+      =link_to "activate", :controller => :users, :action => :activate, :activation_code => user.activation_code

@@ -8,14 +8,9 @@
 
   %body
     #head
-      -if current_user && current_user.has_role?("admin")
-        %ul#admin
-          %li= link_to "questionairres", :controller => :questionaires, :action => :index
-          %li= link_to "create a post", :controller => :items, :action => :new
-          %li= link_to "edit posts", :controller => :items
-          %li= link_to "logout", :controller => :logout
+      = render :partial => "layouts/admin_toolbar"
       = flash_messages
-      =link_to "Lovers of Food. Local, Organic and Sustainably Produced.", root_path, :id=>"tagline"
+      = link_to "Lovers of Food. Local, Organic and Sustainably Produced.", root_path, :id=>"tagline"
       %ul#categories
         %li= link_to "grow", :controller => :items, :action => :find, :id => "grow"
         %li= link_to "eat", :controller => :items, :action => :find, :id => "eat"
@@ -38,6 +33,7 @@
 
       .rail.column_two
         = yield :column_two
+        = render :partial => "layouts/adsense"
     :javascript
       //jQuery.noConflict();
       document.observe("dom:loaded",function(ev){
