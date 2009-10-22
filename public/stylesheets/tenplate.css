@@ -577,7 +577,17 @@ body #grid {
     margin-left: 0; }
     body #grid .column_two ul.previous {
       margin: 0 auto;
-      width: 22em; }
+      width: 22em;
+      display: inline-block; }
+      body #grid .column_two ul.previous:after {
+        content: ".";
+        height: 0;
+        clear: both;
+        display: block;
+        visibility: hidden;
+        line-height: 0; }
+      * html body #grid .column_two ul.previous {
+        height: 1px; }
       body #grid .column_two ul.previous li {
         display: block;
         float: left;
