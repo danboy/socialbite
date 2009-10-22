@@ -1,7 +1,7 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
   include TagsHelper
-  
+
   def ie?
     m = /MSIE\s+([0-9, \.]+)/.match(request.user_agent)
     unless m.nil?
@@ -27,16 +27,15 @@ FLASH_NOTICE_KEYS = [:error, :notice, :warning]
       message % item
     end
   end
-  
+
   def get_previous_items
     @featured_item = Item.find_featured(:last)
-    @items = Item.all(:limit => 9, :order => 'id DESC', :conditions => [ 'id != ?',@featured_item.id])
-    
+    @items = Item.all(:limit => 9, :order => 'id DESC', :conditions => [ 'state = "published" AND id != ?',@featured_item.id])
+
   end
-  
+
   def get_tags
     @tags = Item.tag_counts(:limit => 32, :order => "count DESC" )
     @levels = (1 .. 5).map { |i| "level-#{i}" }
   end
 end
-
