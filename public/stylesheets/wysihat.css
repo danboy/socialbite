@@ -10,6 +10,10 @@ div.editor_toolbar span{
   display:none;
 }
 
+.editor_toolbar .header {
+  background-image: url('../images/text_heading_1.png');
+}
+
 .editor_toolbar .bold {
   background-image: url('../images/text_bold.png');
 }
