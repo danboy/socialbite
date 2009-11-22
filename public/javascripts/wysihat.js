@@ -29,6 +29,7 @@ WysiHat.Editor = {
 
       if (Prototype.Browser.Gecko) {
         editArea.execCommand('undo', false, null);
+        editArea.execCommand('insertbronreturn',false,null);
       }
 
       if (initializer)
@@ -178,7 +179,7 @@ WysiHat.Commands = (function() {
 
     if (Prototype.Browser.IE) this.selection.restore();
 
-    var handler = this.commands.get(command)
+    var handler = this.commands.get(command);
     if (handler)
       handler.bind(this)(value);
     else
@@ -188,12 +189,23 @@ WysiHat.Commands = (function() {
   function queryCommandState(state) {
     var document = this.getDocument();
 
-    var handler = this.queryCommands.get(state)
+    var handler = this.queryCommands.get(state);
     if (handler)
       return handler.bind(this)();
     else
       return document.queryCommandState(state);
   }
+
+	function getSelectedStyles() {
+	  var styles = $H({});
+	  var editor = this;
+	  editor.styleSelectors.each(function(style){
+	    var node = editor.selection.getNode();
+      styles.set(style.first(), Element.getStyle(node, style.last()));
+	  });
+	  return styles;
+	}
+
   var fontSizeNames = $w('xxx-small xx-small x-small small medium large x-large xx-large');
   var fontSizePixels = $w('9px 10px 13px 16px 18px 24px 32px 48px');
 
@@ -208,7 +220,7 @@ WysiHat.Commands = (function() {
 
     newSize = fontSizePixels.indexOf(fontSize);
     if (newSize >= 0) return newSize;
-    return parseInt(fontSize);
+    return parseInt(fontSize, 10);
   }
 
   function standardizeColor(color) {
@@ -244,7 +256,7 @@ WysiHat.Commands = (function() {
 
   function _colorFromArray(a) {
     var arr = a.slice(0, 3).map(function(x){
-      var s = parseInt(x).toString(16);
+      var s = parseInt(x, 10).toString(16);
       return s.length < 2 ? "0" + s : s;
     });
     return "#" + arr.join("");  // String
@@ -288,11 +300,20 @@ WysiHat.Commands = (function() {
      insertHTML:                       insertHTML,
      execCommand:                      execCommand,
      queryCommandState:                queryCommandState,
+     getSelectedStyles:                getSelectedStyles,
 
     commands: $H({}),
 
     queryCommands: $H({
       link: linkSelected
+    }),
+
+    styleSelectors: $H({
+      fontname:     'fontFamily',
+      fontsize:     'fontSize',
+      forecolor:    'color',
+      hilitecolor:  'backgroundColor',
+      backcolor:    'backgroundColor'
     })
   };
 })();
@@ -447,7 +468,7 @@ WysiHat.Window = (function() {
   }
 
   function getWindow() {
-    if (this.contentDocument)
+    if (this.contentDocument && this.contentDocument.defaultView)
       return this.contentDocument.defaultView;
     else if (this.contentWindow.document)
       return this.contentWindow;
@@ -553,31 +574,6 @@ WysiHat.iFrame.Methods = {
 
     return this;
   },
-
-
-  linkStyleSheet: function(href) {
-    this.whenReady(function(editor){
-      var document = editor.getDocument();
-      if(document.createStyleSheet) { // IE
-        document.createStyleSheet(css);
-      } else {
-        var head = document.documentElement.getElementsByTagName('head')[0];
-        if (!head) {
-          head=document.createElement('head');
-          document.documentElement.insertBefore(head,document.getElementsByTagName('body')[0]);
-        }
-        var link='<link href="'+href+'" media="screen" rel="stylesheet" type="text/css"/>';
-        head=$(head);
-        if (head.insert) { // Safari
-          $(head).insert(link);
-        } else { // everyone else
-          head.innerHTML=head.innerHTML+link;
-        }
-      }
-    });
-  },
-
-
 
   /**
    *  WysiHat.iFrame.Methods#getStyle(style) -> string
@@ -889,7 +885,7 @@ if (typeof Range == 'undefined') {
     this.START_TO_END   = 1;
     this.END_TO_END     = 2;
     this.END_TO_START   = 3;
-  }
+  };
 
   Range.CLONE_CONTENTS   = 0;
   Range.DELETE_CONTENTS  = 1;
@@ -1544,7 +1540,7 @@ if (!window.getSelection) {
     this.isCollapsed = true;
     this.rangeCount = 0;
     this.ranges = [];
-  }
+  };
 
   Object.extend(SelectionImpl.prototype, (function() {
     function addRange(r) {
@@ -2013,11 +2009,11 @@ WysiHat.Toolbar = Class.create((function() {
     this.observeButtonClick(button, handler);
 
     var handler = this.buttonStateHandler(name, options);
-    this.observeStateChanges(button, name, handler)
+    this.observeStateChanges(button, name, handler);
   }
 
   function createButtonElement(toolbar, options) {
-    var button = Element('a', {
+    var button = new Element('a', {
       'class': 'button', 'href': '#'
     });
     button.update('<span>' + options.get('label') + '</span>');

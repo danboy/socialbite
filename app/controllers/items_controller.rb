@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  require_role "admin", :for => [:edit,:publish,:draft,:new,:create, :feature, :unfeature, :index] # don't allow contractors to destroy
+  require_role "admin", :for => [:edit,:publish,:preview,:draft,:new,:create, :feature, :unfeature, :index] # don't allow contractors to destroy
 
   def index
 
@@ -44,7 +44,7 @@ class ItemsController < ApplicationController
   end
 
   def find
-    @items = Item.tagged_with(params[:id], :on => :tags).by_date
+    @items = Item.tagged_with(params[:id], :on => :tags,:conditions => "state = 'published'").by_date
   end
 
   def feature

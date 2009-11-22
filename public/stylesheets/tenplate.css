@@ -79,26 +79,26 @@ body {
     text-transform: capitalize;
     font-weight: bold; }
   body h1 {
-    font-size: 2em;
-    margin: 0.9em 0; }
+    font-size: 2.2em;
+    margin: 0.818em 0; }
   body h2 {
-    font-size: 1.7em;
-    margin: 1.059em 0; }
+    font-size: 1.9em;
+    margin: 0.947em 0; }
   body h3 {
-    font-size: 1.6em;
-    margin-bottom: -1.125em; }
+    font-size: 1.8em;
+    margin-bottom: -1em; }
   body h4 {
-    font-size: 1.5em;
-    margin-top: 1.2em;
-    margin-bottom: -1.2em; }
+    font-size: 1.7em;
+    margin-top: 1.059em;
+    margin-bottom: -1.059em; }
   body h5 {
-    font-size: 1.4em;
-    margin-top: 1.286em; }
+    font-size: 1.6em;
+    margin-top: 1.125em; }
   body p,
   body td,
   body th {
-    font-size: 1.4em;
-    margin: 1.286em 0; }
+    font-size: 1.6em;
+    margin: 1.125em 0; }
     body p p,
     body p th,
     body p td,
@@ -129,9 +129,9 @@ body {
     font-size: 1em; }
     body ul li,
     body ol li {
-      margin: 1.286em 0;
+      margin: 1.125em 0;
       list-style: none;
-      font-size: 1.4em;
+      font-size: 1.6em;
       list-style: circle outside; }
       body ul li ul,
       body ul li ol,
@@ -148,8 +148,8 @@ body {
     border: .1em solid #900;
     background: #333;
     color: #EEE;
-    font-size: 1.4em;
-    margin: 1.286em 0;
+    font-size: 1.6em;
+    margin: 1.125em 0;
     display: block;
     white-space: pre-wrap       /* css-3 */;
     white-space: -moz-pre-wrap  /* Mozilla, since 1999 */;
@@ -163,7 +163,7 @@ body {
   body #notices {
     width: auto;
     background-color: #FFE6D4;
-    font-size: 1.4em;
+    font-size: 1.6em;
     padding: 0;
     border-bottom: 1px solid #999; }
     body #notices .flash-notice {
@@ -197,11 +197,11 @@ form {
   form textarea,
   form select {
     font-family: inherit;
-    font-size: 1.4em;
+    font-size: 1.6em;
     height: 1.6em;
     border: .1em solid #900;
     font-weight: inherit;
-    margin: 0 0 1.286em ;
+    margin: 0 0 1.125em ;
     border: .1em solid #a1381a; }
   form textarea {
     height: 8em;
@@ -209,18 +209,18 @@ form {
   form label,
   form h2 {
     font-weight: bold;
-    font-size: 1.4em;
+    font-size: 1.6em;
     clear: both;
     display: block;
     margin: 0; }
   form .label_note {
-    margin: -1.286em  0 1.286em; }
+    margin: -1.125em  0 1.125em; }
   form .radio label,
   form .checkbox label,
   form label.checkbox,
   form label.radio {
     display: inline-block;
-    margin: 1.286em 0;
+    margin: 1.125em 0;
     width: 90%; }
   form div.radio h2,
   form div.checkbox h2 {
@@ -260,14 +260,14 @@ form {
       margin: 0; }
 
 fieldset {
-  margin: 1.286em 0 1.286em -1.4em;
+  margin: 1.125em 0 1.125em -1.6em;
   padding: 1.8em;
   border: 1px solid #ccc; }
   fieldset legend {
-    font-size: 1.4em;
+    font-size: 1.6em;
     font-weight: bold; }
   fieldset fieldset {
-    margin: 1.4em; }
+    margin: 1.6em; }
 
 form.justify fieldset {
   margin: 1em 0 1.5em -2.5em;
@@ -479,10 +479,10 @@ body {
       body #grid .main h2 {
         text-align: center;
         color: #333;
-        margin: 0.45em 0;
+        margin: 0.409em 0;
         border-bottom: .01em solid #333;
-        font-size: 2em;
-        padding: 0.45em 0;
+        font-size: 2.2em;
+        padding: 0.409em 0;
         font-weight: normal; }
       body #grid .main h4 {
         margin-top: 0;
@@ -496,8 +496,18 @@ body {
           content: ", "; }
         body #grid .main ul.tags li:last-child:after {
           content: ""; }
-      body #grid .main .post p:last-child {
-        margin-bottom: 0; }
+      body #grid .main .post {
+        font-size: 1.6em; }
+        body #grid .main .post p:last-child {
+          margin-bottom: 0; }
+        body #grid .main .post h2 {
+          border: none;
+          font-family: Arial, Helvetica, Verdana, sans-serif;
+          text-align: left;
+          font-size: 1.2em;
+          margin-bottom: 0; }
+        body #grid .main .post h2:first-child {
+          margin-top: 1.2em; }
       body #grid .main #splash_pic {
         width: 47.2em;
         height: 25em;

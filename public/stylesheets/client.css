@@ -1,1 +1,101 @@
-/* Internal stylesheet error */
+/*
+Sass::SyntaxError: Undefined variable: "!grid".
+on line 5 of /home/dan/Projects/socialbite/www/public/stylesheets/sass/client.sass
+
+1: body
+2:   h1,h2,h3,h4
+3:   :font-family Times, serif
+4:   #head
+5:     :width= !grid+"em"
+6:     :background #333
+7:     :margin 0 auto
+8:     :text-align left
+9:     +clearfix
+10:     :display block
+11:     :clear both
+
+
+Backtrace:
+/home/dan/Projects/socialbite/www/public/stylesheets/sass/client.sass:5
+/home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/script/variable.rb:27:in `perform'
+/home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/script/operation.rb:35:in `perform'
+/home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/tree/prop_node.rb:87:in `perform!'
+/home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/tree/node.rb:179:in `_perform'
+/home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/tree/node.rb:156:in `perform'
+/home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/tree/node.rb:200:in `perform_children'
+/home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/tree/node.rb:200:in `map'
+/home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/tree/node.rb:200:in `perform_children'
+/home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/tree/node.rb:191:in `perform!'
+/home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/tree/rule_node.rb:156:in `perform!'
+/home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/tree/node.rb:179:in `_perform'
+/home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/tree/node.rb:156:in `perform'
+/home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/tree/node.rb:200:in `perform_children'
+/home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/tree/node.rb:200:in `map'
+/home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/tree/node.rb:200:in `perform_children'
+/home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/tree/node.rb:191:in `perform!'
+/home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/tree/rule_node.rb:156:in `perform!'
+/home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/tree/node.rb:179:in `_perform'
+/home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/tree/node.rb:156:in `perform'
+/home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/tree/node.rb:200:in `perform_children'
+/home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/tree/node.rb:200:in `map'
+/home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/tree/node.rb:200:in `perform_children'
+/home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/tree/node.rb:191:in `perform!'
+/home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/tree/node.rb:179:in `_perform'
+/home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/tree/node.rb:156:in `perform'
+/home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/tree/node.rb:103:in `render'
+/home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/plugin.rb:83:in `update_stylesheet'
+/home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/plugin.rb:69:in `update_stylesheets'
+/home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/plugin.rb:64:in `each'
+/home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/plugin.rb:64:in `update_stylesheets'
+/home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/plugin.rb:62:in `each'
+/home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/plugin.rb:62:in `update_stylesheets'
+/home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/plugin/rails.rb:16:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:391:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:386:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/routing/route_set.rb:434:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:111:in `_call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:82:in `initialize'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:9:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:28:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/params_parser.rb:15:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/session/cookie_store.rb:93:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/reloader.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/failsafe.rb:26:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:106:in `call'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/rails/rack/static.rb:31:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/rails/rack/log_tailer.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:14:in `run'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/commands/server.rb:111
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Sass::SyntaxError: Undefined variable: \"!grid\".\A on line 5 of /home/dan/Projects/socialbite/www/public/stylesheets/sass/client.sass\A \A 1: body\A 2:   h1,h2,h3,h4\A 3:   :font-family Times, serif\A 4:   #head\A 5:     :width= !grid+\"em\"\A 6:     :background #333\A 7:     :margin 0 auto\A 8:     :text-align left\A 9:     +clearfix\A 10:     :display block\A 11:     :clear both\A "; }

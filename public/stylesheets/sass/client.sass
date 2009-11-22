@@ -101,8 +101,17 @@ body
           &:last-child:after
             :content ""
       .post
+        :font-size= !font_size + "em"
         p:last-child
           :margin-bottom 0
+        h2
+          :border none
+          :font-family= !base_font
+          :text-align left
+          :font-size 1.2em
+          :margin-bottom 0
+        h2:first-child
+          :margin-top 1.2em
       #splash_pic
         :width 47.2em
         :height 25em

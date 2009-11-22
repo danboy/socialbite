@@ -35,7 +35,7 @@ FLASH_NOTICE_KEYS = [:error, :notice, :warning]
   end
 
   def get_tags
-    @tags = Item.tag_counts(:limit => 32, :order => "count DESC" )
+    @tags = Item.tag_counts(:limit => 32, :order => "count DESC" ,:conditions => "state = 'published'")
     @levels = (1 .. 5).map { |i| "level-#{i}" }
   end
 end
