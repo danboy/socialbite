@@ -1,6 +1,6 @@
 =render :partial => "welcome/feature"
 =render :partial => "pages/blog_post"
--content_for :column_one do
+-content_for :column_two do
   %h2 Sign up for our newsletter.
   %form{ :action=>'http://madmimi.com/signups/subscribe/2622', :method=>'post'}
     %div
@@ -11,7 +11,7 @@
       =text_field :signup, :email
     %div
       =submit_tag
--content_for :column_two do
+-content_for :column_one do
   %h2 Previous posts
   %ul.previous
     -get_previous_items.each_with_index do |item, index|

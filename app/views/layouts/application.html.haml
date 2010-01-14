@@ -20,6 +20,8 @@
       %h1
         =link_to "Socialbite - lovers of food. local, organic and sustainably produced.", root_path
     #grid
+      .main
+        = yield
       .rail.column_one
         %ul#nav
           %li= link_to "about", :controller => :pages, :action => :about
@@ -27,10 +29,6 @@
         = yield :column_one
         = render :partial => "layouts/follow"
         = render :partial => "layouts/cloud"
-
-      .main
-        = yield
-
       .rail.column_two
         = yield :column_two
         = render :partial => "layouts/adsense"

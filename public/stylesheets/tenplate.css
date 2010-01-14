@@ -498,6 +498,8 @@ body {
           content: ""; }
       body #grid .main .post {
         font-size: 1.6em; }
+        body #grid .main .post p, body #grid .main .post div, body #grid .main .post li, body #grid .main .post span {
+          font-size: 1em; }
         body #grid .main .post p:last-child {
           margin-bottom: 0; }
         body #grid .main .post h2 {

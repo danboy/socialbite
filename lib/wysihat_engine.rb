@@ -34,7 +34,7 @@ module ActionView
           when "paste"
             buttons << "toolbar.addButton({label : \'Paste\', handler: function(editor) { return editor.faceboxPaste(editor); } })\n"
           when "heading"
-            buttons << "toolbar.addButton({label:\'Header\', handler: function(editor){ return editor.execCommand(\'formatBlock\',false,\'H2\');}});\n"
+            buttons << "toolbar.addButton({label:\'Header\', handler: function(editor){ return editor.formatblockSelection('h2');}});\n"
           else
             buttons << "toolbar.addButton({label : \'#{b.to_s.split('_').map {|w| w.capitalize}.join}\'});\n"
           end
