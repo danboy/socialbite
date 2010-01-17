@@ -3,7 +3,6 @@ body
   :font-family Times, serif
   #head
     :width= !grid+"em"
-    :background #333
     :margin 0 auto
     :text-align left
     +clearfix
@@ -11,12 +10,13 @@ body
     :clear both
     :padding-bottom 1em
     h1
-      :background url(/images/logo.png) no-repeat center 2em
-      :height 15em
+      :background url(/images/logo.png) no-repeat left bottom
+      :height 7.5em
       :font-size 1em
-      :width 30em
-      :margin 0 auto
+      :width 50.5em
+      :margin 0
       :position relative
+      :float left
       a
         :text-indent -9999em
         :display block
@@ -24,17 +24,16 @@ body
         :height 100%
         :outline none
     ul
-      :margin 0 1em
+      :margin 6em 1em 0
       li
         :list-style none
         :margin 0
         :display block
         :float left
-        :font-weight bold
+        :font-weight normal
         a
-          :text-transform uppercase
-          :color #FFF
-          :font-family Times
+          :text-transform capitalize
+          :color #333
     a#tagline
       :float left
       :color #FFF

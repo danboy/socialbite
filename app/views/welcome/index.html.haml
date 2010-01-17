@@ -12,7 +12,7 @@
     %div
       =submit_tag
 -content_for :column_one do
-  %h2 Previous posts
+  %h2 Recent Bites
   %ul.previous
     -get_previous_items.each_with_index do |item, index|
       -unless item == @feature

@@ -7,12 +7,12 @@ on line 5 of /home/dan/Projects/socialbite/www/public/stylesheets/sass/client.sa
 3:   :font-family Times, serif
 4:   #head
 5:     :width= !grid+"em"
-6:     :background #333
-7:     :margin 0 auto
-8:     :text-align left
-9:     +clearfix
-10:     :display block
-11:     :clear both
+6:     :margin 0 auto
+7:     :text-align left
+8:     +clearfix
+9:     :display block
+10:     :clear both
+11:     :padding-bottom 1em
 
 
 Backtrace:
@@ -50,8 +50,10 @@ Backtrace:
 /home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/plugin.rb:62:in `each'
 /home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/plugin.rb:62:in `update_stylesheets'
 /home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/plugin/rails.rb:16:in `process'
-/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/rescue.rb:65:in `call_with_exception'
-/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:91:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:391:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:386:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/routing/route_set.rb:434:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:88:in `dispatch'
 /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:111:in `_call'
 /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:82:in `initialize'
 /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:29:in `call'
@@ -96,4 +98,4 @@ script/server:3
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Sass::SyntaxError: Undefined variable: \"!grid\".\A on line 5 of /home/dan/Projects/socialbite/www/public/stylesheets/sass/client.sass\A \A 1: body\A 2:   h1,h2,h3,h4\A 3:   :font-family Times, serif\A 4:   #head\A 5:     :width= !grid+\"em\"\A 6:     :background #333\A 7:     :margin 0 auto\A 8:     :text-align left\A 9:     +clearfix\A 10:     :display block\A 11:     :clear both\A "; }
+  content: "Sass::SyntaxError: Undefined variable: \"!grid\".\A on line 5 of /home/dan/Projects/socialbite/www/public/stylesheets/sass/client.sass\A \A 1: body\A 2:   h1,h2,h3,h4\A 3:   :font-family Times, serif\A 4:   #head\A 5:     :width= !grid+\"em\"\A 6:     :margin 0 auto\A 7:     :text-align left\A 8:     +clearfix\A 9:     :display block\A 10:     :clear both\A 11:     :padding-bottom 1em\A "; }

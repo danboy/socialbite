@@ -10,28 +10,27 @@
     #head
       = render :partial => "layouts/admin_toolbar"
       = flash_messages
-      = link_to "Lovers of Food. Local, Organic and Sustainably Produced.", root_path, :id=>"tagline"
+      %h1
+        =link_to "Socialbite - lovers of food. local, organic and sustainably produced.", root_path
       %ul#categories
         %li= link_to "grow", :controller => :items, :action => :find, :id => "grow"
         %li= link_to "eat", :controller => :items, :action => :find, :id => "eat"
         %li= link_to "buy", :controller => :items, :action => :find, :id => "buy"
         %li= link_to "drink", :controller => :items, :action => :find, :id => "drink"
         %li= link_to "events", :controller => :items, :action => :find, :id => "events"
-      %h1
-        =link_to "Socialbite - lovers of food. local, organic and sustainably produced.", root_path
     #grid
       .main
         = yield
       .rail.column_one
-        %ul#nav
-          %li= link_to "about", :controller => :pages, :action => :about
-          %li= link_to "contact", :controller => :pages, :action => :contact
         = yield :column_one
         = render :partial => "layouts/follow"
         = render :partial => "layouts/cloud"
       .rail.column_two
         = yield :column_two
         = render :partial => "layouts/adsense"
+        %ul#nav
+          %li= link_to "about", :controller => :pages, :action => :about
+          %li= link_to "contact", :controller => :pages, :action => :contact
     :javascript
       //jQuery.noConflict();
       document.observe("dom:loaded",function(ev){
