@@ -605,8 +605,8 @@ body {
         body #grid .column_one ul.previous li {
           display: block;
           float: left;
-          width: 8em;
-          height: 8em;
+          width: 7.5em;
+          height: 7.5em;
           background: #EEE;
           margin: .25em;
           overflow: hidden;
