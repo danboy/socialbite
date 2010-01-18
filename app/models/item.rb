@@ -8,7 +8,7 @@ class Item < ActiveRecord::Base
   acts_as_commentable
 
   has_attached_file :splash,
-                    :styles => { :main => "472x250#", :thumb => "60x60#" },
+                    :styles => { :main => "472x200#", :thumb => "120x120#" },
                     :default_url => "/images/default_:style_splash.jpg"
   require "aasm"
   include AASM
