@@ -591,7 +591,8 @@ body {
       body #grid .column_one ul.previous {
         margin: 0 auto;
         width: auto;
-        display: inline-block; }
+        display: inline-block;
+        font-size: 1em; }
         body #grid .column_one ul.previous:after {
           content: ".";
           height: 0;
