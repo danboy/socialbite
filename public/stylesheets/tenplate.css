@@ -351,6 +351,7 @@ p textarea {
 /* Project Specific SASS
  * Include your project sass and overides here */
 body {
+  background: #FFF url(/images/background.png) repeat-x;
   font-family: Times, serif; }
   body #head {
     width: 94.2em;
@@ -359,7 +360,7 @@ body {
     display: inline-block;
     display: block;
     clear: both;
-    padding-bottom: 1em; }
+    padding: 2.5em 0  1em; }
     body #head:after {
       content: ".";
       height: 0;
@@ -384,7 +385,8 @@ body {
         height: 100%;
         outline: none; }
     body #head ul {
-      margin: 6em 1em 0; }
+      margin: 6em 1em 0;
+      float: left; }
       body #head ul li {
         list-style: none;
         margin: 0;
@@ -402,7 +404,7 @@ body {
       font-weight: bold;
       margin-left: .5em; }
     body #head ul#categories {
-      float: right; }
+      float: left; }
       body #head ul#categories li {
         margin-left: 1em; }
     body #head ul#admin {
@@ -476,10 +478,8 @@ body {
       body #grid .main ul li {
         list-style-position: inside; }
       body #grid .main h2 {
-        text-align: center;
-        color: #333;
+        color: #C93;
         margin: 0.409em 0;
-        border-bottom: .01em solid #333;
         font-size: 2.2em;
         padding: 0.409em 0;
         font-weight: normal; }
@@ -543,7 +543,9 @@ body {
         padding: 0; }
       body #grid .rail ul.tag_cloud {
         width: 100%;
-        margin: 1.8em 0; }
+        margin: 1.8em 0;
+        border: 1px solid #333;
+        padding: .5em; }
         body #grid .rail ul.tag_cloud li {
           display: inline-block;
           margin: 0; }
@@ -586,6 +588,28 @@ body {
             font-family: Times; }
     body #grid .column_one {
       margin-right: 0; }
+      body #grid .column_one ul.previous {
+        margin: 0 auto;
+        width: auto;
+        display: inline-block; }
+        body #grid .column_one ul.previous:after {
+          content: ".";
+          height: 0;
+          clear: both;
+          display: block;
+          visibility: hidden;
+          line-height: 0; }
+        * html body #grid .column_one ul.previous {
+          height: 1px; }
+        body #grid .column_one ul.previous li {
+          display: block;
+          float: left;
+          width: 8em;
+          height: 8em;
+          background: #EEE;
+          margin: .25em;
+          overflow: hidden;
+          list-style: none; }
     body #grid .column_two {
       margin-left: 0; }
       body #grid .column_two ul.previous {
@@ -608,7 +632,8 @@ body {
           height: 4em;
           background: #999;
           margin: .25em;
-          overflow: hidden; }
+          overflow: hidden;
+          list-style: none; }
       body #grid .column_two h2.archives {
         margin: 1em;
         padding: .5em;

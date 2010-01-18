@@ -1,22 +1,22 @@
 /*
 Sass::SyntaxError: Undefined variable: "!grid".
-on line 5 of /home/dan/Projects/socialbite/www/public/stylesheets/sass/client.sass
+on line 6 of /home/dan/Projects/socialbite/www/public/stylesheets/sass/client.sass
 
-1: body
-2:   h1,h2,h3,h4
-3:   :font-family Times, serif
-4:   #head
-5:     :width= !grid+"em"
-6:     :margin 0 auto
-7:     :text-align left
-8:     +clearfix
-9:     :display block
-10:     :clear both
-11:     :padding-bottom 1em
+2:   :background #FFF url(/images/background.png) repeat-x
+3:   h1,h2,h3,h4
+4:   :font-family Times, serif
+5:   #head
+6:     :width= !grid+"em"
+7:     :margin 0 auto
+8:     :text-align left
+9:     +clearfix
+10:     :display block
+11:     :clear both
+12:     :padding 2.5em 0  1em
 
 
 Backtrace:
-/home/dan/Projects/socialbite/www/public/stylesheets/sass/client.sass:5
+/home/dan/Projects/socialbite/www/public/stylesheets/sass/client.sass:6
 /home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/script/variable.rb:27:in `perform'
 /home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/script/operation.rb:35:in `perform'
 /home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/tree/prop_node.rb:87:in `perform!'
@@ -98,4 +98,4 @@ script/server:3
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Sass::SyntaxError: Undefined variable: \"!grid\".\A on line 5 of /home/dan/Projects/socialbite/www/public/stylesheets/sass/client.sass\A \A 1: body\A 2:   h1,h2,h3,h4\A 3:   :font-family Times, serif\A 4:   #head\A 5:     :width= !grid+\"em\"\A 6:     :margin 0 auto\A 7:     :text-align left\A 8:     +clearfix\A 9:     :display block\A 10:     :clear both\A 11:     :padding-bottom 1em\A "; }
+  content: "Sass::SyntaxError: Undefined variable: \"!grid\".\A on line 6 of /home/dan/Projects/socialbite/www/public/stylesheets/sass/client.sass\A \A 2:   :background #FFF url(/images/background.png) repeat-x\A 3:   h1,h2,h3,h4\A 4:   :font-family Times, serif\A 5:   #head\A 6:     :width= !grid+\"em\"\A 7:     :margin 0 auto\A 8:     :text-align left\A 9:     +clearfix\A 10:     :display block\A 11:     :clear both\A 12:     :padding 2.5em 0  1em\A "; }

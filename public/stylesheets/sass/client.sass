@@ -1,4 +1,5 @@
 body
+  :background #FFF url(/images/background.png) repeat-x
   h1,h2,h3,h4
   :font-family Times, serif
   #head
@@ -8,7 +9,7 @@ body
     +clearfix
     :display block
     :clear both
-    :padding-bottom 1em
+    :padding 2.5em 0  1em
     h1
       :background url(/images/logo.png) no-repeat left bottom
       :height 7.5em
@@ -25,6 +26,7 @@ body
         :outline none
     ul
       :margin 6em 1em 0
+      :float left
       li
         :list-style none
         :margin 0
@@ -42,7 +44,7 @@ body
       :font-weight bold
       :margin-left .5em
     ul#categories
-      :float right
+      :float left
       li
         :margin-left 1em
     ul#admin
@@ -79,10 +81,8 @@ body
         li
           :list-style-position inside
       h2
-        :text-align center
-        :color #333
+        :color #C93
         :margin= ((!line_height/(!font_size + .6))/2)+"em" 0
-        :border-bottom .01em solid #333
         :font-size= !font_size + .6+"em"
         :padding= ((!line_height/(!font_size + .6))/2)+"em" 0
         :font-weight normal
@@ -132,6 +132,8 @@ body
       ul.tag_cloud
         :width 100%
         :margin=  !page_padding+"em" 0
+        :border 1px solid #333
+        :padding .5em
         li
           :display inline-block
           :margin 0
@@ -175,6 +177,19 @@ body
             :font-family Times
     .column_one
       :margin-right 0
+      ul.previous
+        :margin 0 auto
+        :width auto
+        +clearfix
+        li
+          :display block
+          :float left
+          :width 8em
+          :height 8em
+          :background #EEE
+          :margin .25em
+          :overflow hidden
+          :list-style none
     .column_two
       :margin-left 0
       ul.previous
@@ -189,6 +204,7 @@ body
           :background #999
           :margin .25em
           :overflow hidden
+          :list-style none
       h2.archives
         :margin 1em
         :padding .5em
