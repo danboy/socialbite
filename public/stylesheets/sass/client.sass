@@ -1,7 +1,7 @@
 body
   :background #FFF url(/images/background.png) repeat-x
   h1,h2,h3,h4
-  :font-family Times, serif
+  :font-family= !base_font
   #head
     :width= !grid+"em"
     :margin 0 auto
@@ -82,14 +82,14 @@ body
           :list-style-position inside
       h2
         :color #C93
-        :margin= ((!line_height/(!font_size + .6))/2)+"em" 0
-        :font-size= !font_size + .6+"em"
-        :padding= ((!line_height/(!font_size + .6))/2)+"em" 0
+        :margin= ((!line_height/(!font_size + .4))/2)+"em" 0
+        :font-size= !font_size + .4+"em"
+        :padding= ((!line_height/(!font_size + .4))/2)+"em" 0
         :font-weight normal
       h4
         :margin-top 0
         :font-weight normal
-        :font-size 1.6em
+        :font-size 1.2em
       ul.tags
         li
           :display inline-block
@@ -109,7 +109,6 @@ body
           :border none
           :font-family= !base_font
           :text-align left
-          :font-size 1.2em
           :margin-bottom 0
         h2:first-child
           :margin-top 1.2em

@@ -10,6 +10,7 @@
   %div
     =f.label :splash, "Feature Image"
     =f.file_field :splash
+    =f.hidden_field :user_id, :value => current_user.id
   %div
     =f.label :body
     =f.wysihat_editor  :body

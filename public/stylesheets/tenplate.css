@@ -70,7 +70,7 @@ body {
   font-size: 62.5%;
   color: #666666;
   font-family: Arial, Helvetica, Verdana, sans-serif;
-  line-height: 1.8em;
+  line-height: 2em;
   background-color: white; }
   body h1,
   body h2,
@@ -79,26 +79,26 @@ body {
     text-transform: capitalize;
     font-weight: bold; }
   body h1 {
-    font-size: 2.2em;
-    margin: 0.818em 0; }
+    font-size: 2em;
+    margin: 1em 0; }
   body h2 {
-    font-size: 1.9em;
-    margin: 0.947em 0; }
-  body h3 {
-    font-size: 1.8em;
-    margin-bottom: -1em; }
-  body h4 {
     font-size: 1.7em;
-    margin-top: 1.059em;
-    margin-bottom: -1.059em; }
-  body h5 {
+    margin: 1.176em 0; }
+  body h3 {
     font-size: 1.6em;
-    margin-top: 1.125em; }
+    margin-bottom: -1.25em; }
+  body h4 {
+    font-size: 1.5em;
+    margin-top: 1.333em;
+    margin-bottom: -1.333em; }
+  body h5 {
+    font-size: 1.4em;
+    margin-top: 1.429em; }
   body p,
   body td,
   body th {
-    font-size: 1.6em;
-    margin: 1.125em 0; }
+    font-size: 1.4em;
+    margin: 1.429em 0; }
     body p p,
     body p th,
     body p td,
@@ -117,7 +117,7 @@ body {
       font-size: 1em;
       margin: 0; }
   body a {
-    color: #a1381a;
+    color: #cc9933;
     text-decoration: none; }
     body a:hover {
       text-decoration: underline; }
@@ -129,9 +129,9 @@ body {
     font-size: 1em; }
     body ul li,
     body ol li {
-      margin: 1.125em 0;
+      margin: 1.429em 0;
       list-style: none;
-      font-size: 1.6em;
+      font-size: 1.4em;
       list-style: circle outside; }
       body ul li ul,
       body ul li ol,
@@ -143,13 +143,13 @@ body {
       body ol li * {
         font-size: 1em; }
   body blockquote {
-    margin: 0 7.2em; }
+    margin: 0 8em; }
   body pre.example {
     border: .1em solid #900;
     background: #333;
     color: #EEE;
-    font-size: 1.6em;
-    margin: 1.125em 0;
+    font-size: 1.4em;
+    margin: 1.429em 0;
     display: block;
     white-space: pre-wrap       /* css-3 */;
     white-space: -moz-pre-wrap  /* Mozilla, since 1999 */;
@@ -163,7 +163,7 @@ body {
   body #notices {
     width: auto;
     background-color: #FFE6D4;
-    font-size: 1.6em;
+    font-size: 1.4em;
     padding: 0;
     border-bottom: 1px solid #999; }
     body #notices .flash-notice {
@@ -197,41 +197,41 @@ form {
   form textarea,
   form select {
     font-family: inherit;
-    font-size: 1.6em;
-    height: 1.6em;
+    font-size: 1.4em;
+    height: 1.8em;
     border: .1em solid #900;
     font-weight: inherit;
-    margin: 0 0 1.125em ;
-    border: .1em solid #a1381a; }
+    margin: 0 0 1.429em ;
+    border: .1em solid #cc9933; }
   form textarea {
-    height: 8em;
+    height: 9em;
     width: 100%; }
   form label,
   form h2 {
     font-weight: bold;
-    font-size: 1.6em;
+    font-size: 1.4em;
     clear: both;
     display: block;
     margin: 0; }
   form .label_note {
-    margin: -1.125em  0 1.125em; }
+    margin: -1.429em  0 1.429em; }
   form .radio label,
   form .checkbox label,
   form label.checkbox,
   form label.radio {
     display: inline-block;
-    margin: 1.125em 0;
+    margin: 1.429em 0;
     width: 90%; }
   form div.radio h2,
   form div.checkbox h2 {
     margin-bottom: 0; }
   form div.radio ul,
   form div.checkbox ul {
-    margin: 0.9em 0 0; }
+    margin: 1em 0 0; }
     form div.radio ul li,
     form div.checkbox ul li {
       list-style: none !important;
-      margin-bottom: 0.9em; }
+      margin-bottom: 1em; }
       form div.radio ul li label,
       form div.checkbox ul li label {
         margin: 0; }
@@ -241,7 +241,7 @@ form {
     vertical-align: top; }
   form input[type="submit"],
   form input[type="button"] {
-    height: 1.8em; }
+    height: 2em; }
   form ul li,
   form ol li {
     list-style: none;
@@ -260,14 +260,14 @@ form {
       margin: 0; }
 
 fieldset {
-  margin: 1.125em 0 1.125em -1.6em;
-  padding: 1.8em;
+  margin: 1.429em 0 1.429em -1.4em;
+  padding: 2em;
   border: 1px solid #ccc; }
   fieldset legend {
-    font-size: 1.6em;
+    font-size: 1.4em;
     font-weight: bold; }
   fieldset fieldset {
-    margin: 1.6em; }
+    margin: 1.4em; }
 
 form.justify fieldset {
   margin: 1em 0 1.5em -2.5em;
@@ -318,7 +318,7 @@ form.justify textarea {
   height: 4em; }
   form.justify textarea:focus {
     background: #FFF;
-    border-color: #a1381a; }
+    border-color: #cc9933; }
 form.justify select {
   margin: 0 0 0 30%; }
 
@@ -329,8 +329,8 @@ p textarea {
 
 #grid,
 .grid {
-  width: 94.2em;
-  padding: 0 0.9em;
+  width: 94em;
+  padding: 0 1em;
   display: inline-block;
   display: block; }
   #grid:after,
@@ -346,15 +346,15 @@ p textarea {
     height: 1px; }
   * html #grid,
   * html .grid {
-    width: 97.8em; }
+    width: 98em; }
 
 /* Project Specific SASS
  * Include your project sass and overides here */
 body {
   background: #FFF url(/images/background.png) repeat-x;
-  font-family: Times, serif; }
+  font-family: Arial, Helvetica, Verdana, sans-serif; }
   body #head {
-    width: 94.2em;
+    width: 94em;
     margin: 0 auto;
     text-align: left;
     display: inline-block;
@@ -458,13 +458,13 @@ body {
       body #grid .column h2:first-child {
         margin-top: 0; }
     body #grid .main {
-      width: 47.123em;
-      padding: 0.9em;
-      margin: 0.9em;
-      border: 0em none #a1381a;
-      -moz-border-radius: 0.2em;
-      -webkit-border-radius: 0.2em;
-      -khtml-border-radius: 0.2em;
+      width: 46.615em;
+      padding: 1em;
+      margin: 1em;
+      border: 0em none #cc9933;
+      -moz-border-radius: 0em;
+      -webkit-border-radius: 0em;
+      -khtml-border-radius: 0em;
       display: inline-block; }
       body #grid .main:after {
         content: ".";
@@ -479,14 +479,14 @@ body {
         list-style-position: inside; }
       body #grid .main h2 {
         color: #C93;
-        margin: 0.409em 0;
-        font-size: 2.2em;
-        padding: 0.409em 0;
+        margin: 0.556em 0;
+        font-size: 1.8em;
+        padding: 0.556em 0;
         font-weight: normal; }
       body #grid .main h4 {
         margin-top: 0;
         font-weight: normal;
-        font-size: 1.6em; }
+        font-size: 1.2em; }
       body #grid .main ul.tags li {
         display: inline-block;
         margin: 0;
@@ -496,7 +496,7 @@ body {
         body #grid .main ul.tags li:last-child:after {
           content: ""; }
       body #grid .main .post {
-        font-size: 1.6em; }
+        font-size: 1.4em; }
         body #grid .main .post p, body #grid .main .post div, body #grid .main .post li, body #grid .main .post span {
           font-size: 1em; }
         body #grid .main .post p:last-child {
@@ -505,13 +505,12 @@ body {
           border: none;
           font-family: Arial, Helvetica, Verdana, sans-serif;
           text-align: left;
-          font-size: 1.2em;
           margin-bottom: 0; }
         body #grid .main .post h2:first-child {
           margin-top: 1.2em; }
       body #grid .main #splash_pic {
         width: 47.2em;
-        height: 25em;
+        height: auto;
         background: #fff;
         padding: .5em;
         border: .1em solid #CCC; }
@@ -520,13 +519,13 @@ body {
       body #grid ul.inline li {
         display: inline; }
     body #grid .rail {
-      width: 18.438em;
-      padding: 0.9em;
-      margin: 0.9em;
-      border: 0em none #a1381a;
-      -moz-border-radius: 0.2em;
-      -webkit-border-radius: 0.2em;
-      -khtml-border-radius: 0.2em;
+      width: 18.026em;
+      padding: 1em;
+      margin: 1em;
+      border: 0em none #cc9933;
+      -moz-border-radius: 0em;
+      -webkit-border-radius: 0em;
+      -khtml-border-radius: 0em;
       display: inline-block; }
       body #grid .rail:after {
         content: ".";
@@ -543,7 +542,7 @@ body {
         padding: 0; }
       body #grid .rail ul.tag_cloud {
         width: 100%;
-        margin: 1.8em 0;
+        margin: 2em 0;
         border: 1px solid #333;
         padding: .5em; }
         body #grid .rail ul.tag_cloud li {
@@ -563,7 +562,7 @@ body {
           body #grid .rail ul.tag_cloud li a {
             color: #666; }
             body #grid .rail ul.tag_cloud li a:hover {
-              color: #a1381a; }
+              color: #cc9933; }
       body #grid .rail ul.social li {
         list-style: none inside;
         padding: 0 0 0 1.4em;
