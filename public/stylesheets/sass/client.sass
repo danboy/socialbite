@@ -63,7 +63,6 @@ body
     :display block
     :margin 0 auto
     :padding 0
-    :border-top .1em double #DDD
     .main,
     .rail,
     .page,
@@ -128,6 +127,12 @@ body
         :font-size .95em
       form
         :padding 0
+      h2
+        :color #C93
+        :margin= ((!line_height/(!font_size + .4))/2)+"em" 0
+        :font-size= !font_size + .4+"em"
+        :padding= ((!line_height/(!font_size + .4))/2)+"em" 0
+        :font-weight normal
       ul.tag_cloud
         :width 100%
         :margin=  !page_padding+"em" 0

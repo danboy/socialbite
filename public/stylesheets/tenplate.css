@@ -540,6 +540,12 @@ body {
         font-size: .95em; }
       body #grid .rail form {
         padding: 0; }
+      body #grid .rail h2 {
+        color: #C93;
+        margin: 0.556em 0;
+        font-size: 1.8em;
+        padding: 0.556em 0;
+        font-weight: normal; }
       body #grid .rail ul.tag_cloud {
         width: 100%;
         margin: 2em 0;
