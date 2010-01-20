@@ -431,8 +431,7 @@ body {
     display: inline-block;
     display: block;
     margin: 0 auto;
-    padding: 0;
-    border-top: .1em double #DDD; }
+    padding: 0; }
     body #grid:after {
       content: ".";
       height: 0;
