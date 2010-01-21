@@ -12,7 +12,7 @@ xml.rss(:version=>"2.0"){
             link_to( image_tag(item.splash.url(:main), :id => 'splash_pic'), :controller => :items, :action => :show, :id => item.id)+
             item.body
           )
-          xml.author(item.user)
+          xml.author(item.user.login)
           xml.pubDate(item.created_at.strftime("%a, %d %b %Y %H:%M:%S %z"))
           xml.link("http://www.socialbite.com"+url_for(item))
           xml.guid("http://www.socialbite.com"+url_for(item))
