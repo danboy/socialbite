@@ -10,6 +10,7 @@ body
     :display block
     :clear both
     :padding 2.5em 0  1em
+    :position relative
     h1
       :background url(/images/logo.png) no-repeat left bottom
       :height 7.5em
@@ -48,16 +49,40 @@ body
       li
         :margin-left 1em
     ul#admin
-      :width 100%
-      +clearfix
-      :background #900
-      :border .1em solid #CCC
-      :border none
+      :width 10em
+      :background transparent url(../images/admin.png) no-repeat center -1em
+      :position absolute
+      :top 0
+      :right 0
       :margin 0
+      :padding 2.8em 0 0
+      :cursor pointer
       li
-        :margin .5em
+        :margin 0 0 0 -6em
+        :display none
+        :width 12em
+        :background #333
+        :padding .3em .5em
+        :text-align left
         a
           :color #FFF
+          :font-weight bold
+        &:first-child
+          :-moz-border-radius-topleft .4em
+          :-moz-border-radius-topright .4em
+          :-khtml-border-top-right-radius .4em
+          :-khtml-border-top-left-radius .4em
+          :-webkit-border-top-right-radius .4em
+          :-webkit-border-top-left-radius .4em
+        &:last-child
+          :-moz-border-radius-bottomleft .4em
+          :-moz-border-radius-bottomright .4em
+          :-khtml-border-bottom-right-radius .4em
+          :-khtml-border-bottom-left-radius .4em
+          :-webkit-border-bottom-right-radius .4em
+          :-webkit-border-bottom-left-radius .4em
+      &:hover li
+        :display block
   #grid
     +clearfix
     :display block

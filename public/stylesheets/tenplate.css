@@ -360,7 +360,8 @@ body {
     display: inline-block;
     display: block;
     clear: both;
-    padding: 2.5em 0  1em; }
+    padding: 2.5em 0  1em;
+    position: relative; }
     body #head:after {
       content: ".";
       height: 0;
@@ -408,25 +409,40 @@ body {
       body #head ul#categories li {
         margin-left: 1em; }
     body #head ul#admin {
-      width: 100%;
-      display: inline-block;
-      background: #900;
-      border: .1em solid #CCC;
-      border: none;
-      margin: 0; }
-      body #head ul#admin:after {
-        content: ".";
-        height: 0;
-        clear: both;
-        display: block;
-        visibility: hidden;
-        line-height: 0; }
-      * html body #head ul#admin {
-        height: 1px; }
+      width: 10em;
+      background: transparent url(../images/admin.png) no-repeat center -1em;
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 0;
+      padding: 2.8em 0 0;
+      cursor: pointer; }
       body #head ul#admin li {
-        margin: .5em; }
+        margin: 0 0 0 -6em;
+        display: none;
+        width: 12em;
+        background: #333;
+        padding: .3em .5em;
+        text-align: left; }
         body #head ul#admin li a {
-          color: #FFF; }
+          color: #FFF;
+          font-weight: bold; }
+        body #head ul#admin li:first-child {
+          -moz-border-radius-topleft: .4em;
+          -moz-border-radius-topright: .4em;
+          -khtml-border-top-right-radius: .4em;
+          -khtml-border-top-left-radius: .4em;
+          -webkit-border-top-right-radius: .4em;
+          -webkit-border-top-left-radius: .4em; }
+        body #head ul#admin li:last-child {
+          -moz-border-radius-bottomleft: .4em;
+          -moz-border-radius-bottomright: .4em;
+          -khtml-border-bottom-right-radius: .4em;
+          -khtml-border-bottom-left-radius: .4em;
+          -webkit-border-bottom-right-radius: .4em;
+          -webkit-border-bottom-left-radius: .4em; }
+      body #head ul#admin:hover li {
+        display: block; }
   body #grid {
     display: inline-block;
     display: block;
@@ -572,7 +588,7 @@ body {
         list-style: none inside;
         padding: 0 0 0 1.4em;
         margin: 0 0 .5em;
-        background: url(/images/icons/facebook.png) no-repeat left center; }
+        background: no-repeat left center; }
         body #grid .rail ul.social li.facebook {
           background-image: url(/images/icons/facebook-16x16.png); }
         body #grid .rail ul.social li.twitter {

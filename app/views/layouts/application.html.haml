@@ -8,6 +8,7 @@
     %title SocialBite - lovers of food. local, organic and sustainably produced.
   %body
     #head
+      = render :partial => "layouts/admin_toolbar"
       %h1
         =link_to "Socialbite - lovers of food. local, organic and sustainably produced.", root_path
       %ul#categories
@@ -17,10 +18,9 @@
         %li= link_to "drink", :controller => :items, :action => :find, :id => "drink"
         %li= link_to "read", :controller => :items, :action => :find, :id => "read"
         %li= link_to "events", :controller => :items, :action => :find, :id => "events"
-      = render :partial => "layouts/admin_toolbar"
-      = flash_messages
     #grid
       .main
+        = flash_messages
         = yield
       .rail.column_one
         = yield :column_one
