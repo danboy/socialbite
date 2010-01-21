@@ -83,6 +83,7 @@ body
           :-webkit-border-bottom-left-radius .4em
       &:hover li
         :display block
+        
   #grid
     +clearfix
     :display block
@@ -99,6 +100,17 @@ body
       :float left
       h2:first-child
         :margin-top 0
+    table.admin
+      :border .1em solid #CCC
+      :margin 1em 0
+      tr
+        &.alt
+          :background-color #EEE
+        th,td
+          :padding .5em
+      thead
+        tr
+          :background #CCC
     .main
       +column_calc((!grid/13)*7)
       ul

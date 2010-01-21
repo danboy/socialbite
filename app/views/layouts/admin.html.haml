@@ -1,0 +1,28 @@
+!!!
+%html
+  %head
+    = stylesheet_link_tag 'tenplate','facebox','wysihat'
+    %link{'rel' => "alternate", 'type' => "application/rss+xml", 'title' => "RSS 2.0", 'href' => "/pages/Home.rss"}
+    - # include javascript
+    = javascript_include_tag "prototype","effects","controls","dragdrop","wysihat","facebox"
+    %title SocialBite - lovers of food. local, organic and sustainably produced.
+  %body
+    #head
+      = render :partial => "layouts/admin_toolbar"
+      %h1
+        =link_to "Socialbite - lovers of food. local, organic and sustainably produced.", root_path
+      %ul#categories
+        %li= link_to "grow", :controller => :items, :action => :find, :id => "grow"
+        %li= link_to "eat", :controller => :items, :action => :find, :id => "eat"
+        %li= link_to "buy", :controller => :items, :action => :find, :id => "buy"
+        %li= link_to "drink", :controller => :items, :action => :find, :id => "drink"
+        %li= link_to "read", :controller => :items, :action => :find, :id => "read"
+        %li= link_to "events", :controller => :items, :action => :find, :id => "events"
+    #grid
+      = flash_messages
+      = yield
+    :javascript
+      //jQuery.noConflict();
+      document.observe("dom:loaded",function(ev){
+        #{yield :onReady}
+      });

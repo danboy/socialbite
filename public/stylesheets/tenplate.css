@@ -472,6 +472,15 @@ body {
       body #grid .full_page h2:first-child,
       body #grid .column h2:first-child {
         margin-top: 0; }
+    body #grid table.admin {
+      border: .1em solid #CCC;
+      margin: 1em 0; }
+      body #grid table.admin tr.alt {
+        background-color: #EEE; }
+      body #grid table.admin tr th, body #grid table.admin tr td {
+        padding: .5em; }
+      body #grid table.admin thead tr {
+        background: #CCC; }
     body #grid .main {
       width: 46.615em;
       padding: 1em;

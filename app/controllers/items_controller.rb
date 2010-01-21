@@ -2,9 +2,10 @@ class ItemsController < ApplicationController
   require_role "admin", :for => [:edit,:publish,:preview,:draft,:new,:create, :feature, :unfeature, :index] # don't allow contractors to destroy
 
   def index
-
-    @items = Item.paginate :page => params[:page], :per_page => 10, :order =>"id desc"
-
+   
+    @items = Item.paginate :page => params[:page], :per_page => 8, :order =>"id desc"
+    render :layout => "admin"
+    
   end
 
   def edit
