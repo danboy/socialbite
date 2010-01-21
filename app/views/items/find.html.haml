@@ -3,7 +3,7 @@
     =link_to image_tag(item.splash.url(:main), :id => 'splash_pic'), :controller => :items, :action => :show, :id => item.id
   %h2= item.title
   %h4= "Created #{time_ago_in_words(item.created_at)} ago"
-  .post= item.body
+  .post= item.body.truncate_html(200, at_end = link_to( "... [read more]", :controller => :items, :action => :show, :id => item.id))
   %ul.tags
     -item.tags.each do |tag|
       %li= tag

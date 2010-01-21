@@ -38,4 +38,5 @@ FLASH_NOTICE_KEYS = [:error, :notice, :warning]
     @tags = Item.tag_counts(:limit => 32, :order => "RAND()" ,:conditions => "state = 'published'")
     @levels = (1 .. 5).map { |i| "level-#{i}" }
   end
+  
 end
