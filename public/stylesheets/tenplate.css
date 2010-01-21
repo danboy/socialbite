@@ -517,7 +517,8 @@ body {
         font-size: 1.1em; }
         body #grid .main ul.tags li:after {
           content: ", "; }
-        body #grid .main ul.tags li:last-child:after {
+        body #grid .main ul.tags li:last-child:after,
+        body #grid .main ul.tags li:first-child:after {
           content: ""; }
       body #grid .main .post {
         font-size: 1.4em; }

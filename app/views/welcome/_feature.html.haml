@@ -2,8 +2,9 @@
   =link_to image_tag(@feature.splash.url(:main), :id => 'splash_pic'), :controller => :items, :action => :show, :id => @feature.id
   %h2= link_to @feature.title, :controller => :items, :action => :show, :id => @feature.id
   %h4= "Created #{time_ago_in_words(@feature.created_at)} ago by #{@feature.user.login}"
-  .post= @feature.body.truncate_html(400, at_end = link_to( "... [read more]", :controller => :items, :action => :show, :id => @feature.id))
+  .post= truncate_html @feature.body, :length => 400
   %ul.tags
+    %li= link_to "read more", :controller => :items, :action => :show, :id => @feature.id
     -@feature.tags.each do |tag|
-      %li= tag
+      %li= link_to tag, :controller => :items, :action => :find, :id => tag
     %li= link_to "comments (#{@feature.comments.length})", {:controller => :items, :action => :show, :id => @feature.id}

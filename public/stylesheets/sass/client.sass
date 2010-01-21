@@ -133,7 +133,8 @@ body
           :font-size 1.1em
           &:after
             :content ", "
-          &:last-child:after
+          &:last-child:after,
+          &:first-child:after
             :content ""
       .post
         :font-size= !font_size + "em"

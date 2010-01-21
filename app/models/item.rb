@@ -1,4 +1,3 @@
-require 'lib/truncate'
 class Item < ActiveRecord::Base
   belongs_to :page
   belongs_to :user
