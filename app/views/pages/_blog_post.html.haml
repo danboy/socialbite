@@ -1,4 +1,4 @@
-- @page.items.each_with_index do |item,index|
+- @items.each_with_index do |item,index|
   -if !item.featured? #&& item.published?
     -if index == 0 && controller.controller_name != "welcome"
       =link_to image_tag(item.splash.url(:main), :id => 'splash_pic'), :controller => :items, :action => :show, :id => item.id

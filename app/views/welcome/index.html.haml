@@ -1,6 +1,7 @@
 %h2 Fresh Bites
 =render :partial => "welcome/feature"
 =render :partial => "pages/blog_post"
+%p=will_paginate @items
 -content_for :column_two do
   %h2 Sign up for our newsletter.
   %form{ :action=>'http://madmimi.com/signups/subscribe/2622', :method=>'post'}

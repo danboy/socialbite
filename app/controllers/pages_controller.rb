@@ -7,6 +7,7 @@ class PagesController < ApplicationController
 
   def show
     @page=Page.find_by_name(params[:id])
+    @items = @page.items.paginate :page => params[:page], :per_page => 10 
     if !@page || @page.nil?
       @page=Page.new({:name => "Not found",:page_type => 13})
       flash[:error] = "Page not found"
