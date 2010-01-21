@@ -1,0 +1,28 @@
+%h1 overview
+%table#stats.admin
+  %thead
+    %tr
+      %th Posts
+      %th Comments
+      %th Tags
+  %tbody
+    %tr
+      %td= @count
+      %td= @comment_count
+      %td= @tag_count
+%h2 Awaiting moderation
+%table#drafts.admin
+  %thead
+    %tr
+      %th Title
+      %th Edit
+      %th Publish
+  %tbody
+    - @drafts.each do |draft|
+      %tr{ :class => cycle("", "alt")}
+        %td= draft.title
+        %td
+          =link_to "edit", :controller => :items, :action => :edit, :id => draft.id
+          =link_to "destroy", "/items/destroy/#{draft.id}", :confirm => "are you sure you want to delete #{draft.title}"
+          =link_to "preview", "/items/preview/#{draft.id}"
+        %td=link_to "publish", "/items/publish/#{draft.id}", :confirm => "are you sure you want to publish #{draft.title}"
