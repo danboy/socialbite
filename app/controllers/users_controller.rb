@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @roles = Role.all
   end
-  # render new.rhtml
+
   def new
     @user = User.new
   end

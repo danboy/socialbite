@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
-  require_role "admin", :for => [:edit,:publish,:preview,:draft,:new,:create, :feature, :unfeature, :index] # don't allow contractors to destroy
-
+  require_role "admin", :for => [:publish,:draft, :feature, :unfeature,:destroy] # don't allow contractors to destroy
+  require_role "author", :only => [:edit,:preview,:new,:create,:index,:update]
   def index
    
     @items = Item.paginate :page => params[:page], :per_page => 8, :order =>"id desc"
