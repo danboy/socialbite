@@ -8,7 +8,7 @@
     =f.label :title
     =f.text_field :title
   %div
-    =f.label :splash, "Feature Image"
+    =f.label :splash, "Feature Image (minimum size: 480X200)"
     =f.file_field :splash
     =f.hidden_field :user_id, :value => current_user.id
   %div
@@ -17,9 +17,6 @@
   %div
     =f.label :tag_list
     =f.text_field :tag_list
-  %div
-    =label_tag :feature
-    =check_box :article, :feature
   %div
     =f.submit "Create", :id => "trigger"
 
