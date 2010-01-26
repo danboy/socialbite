@@ -4,7 +4,7 @@
     = stylesheet_link_tag 'tenplate','facebox','wysihat'
     %link{'rel' => "alternate", 'type' => "application/rss+xml", 'title' => "RSS 2.0", 'href' => "/pages/Home.rss"}
     - # include javascript
-    = javascript_include_tag "prototype","effects","controls","dragdrop","wysihat","facebox"
+    = javascript_include_tag "jquery","twitter","wtooltip","prototype","effects","controls","dragdrop","wysihat","facebox"
     %title SocialBite - lovers of food. local, organic and sustainably produced.
   %body
     #head
@@ -19,12 +19,15 @@
         %li= link_to "read", :controller => :items, :action => :find, :id => "read"
         %li= link_to "events", :controller => :items, :action => :find, :id => "events"
     #grid
+      
       .main
         = flash_messages
         = yield
+      .pad
       .rail.column_one
         = yield :column_one
         = render :partial => "layouts/follow"
+      .pad
       .rail.column_two
         = render :partial => "layouts/cloud"
         = yield :column_two
@@ -33,7 +36,8 @@
           %li= link_to "about", :controller => :pages, :action => :about
           %li= link_to "contact", :controller => :pages, :action => :contact
     :javascript
-      //jQuery.noConflict();
+      jQuery('.previous li a').wTooltip({className: "tooltip", style: false});
+
       document.observe("dom:loaded",function(ev){
         #{yield :onReady}
       });

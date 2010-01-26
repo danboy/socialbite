@@ -68,7 +68,7 @@ a img {
 
 body {
   font-size: 62.5%;
-  color: #666666;
+  color: #333333;
   font-family: Arial, Helvetica, Verdana, sans-serif;
   line-height: 2em;
   background-color: white; }
@@ -143,7 +143,7 @@ body {
       body ol li * {
         font-size: 1em; }
   body blockquote {
-    margin: 0 8em; }
+    margin: 0 4em; }
   body pre.example {
     border: .1em solid #900;
     background: #333;
@@ -231,7 +231,7 @@ form {
     form div.radio ul li,
     form div.checkbox ul li {
       list-style: none !important;
-      margin-bottom: 1em; }
+      margin-bottom: 0.5em; }
       form div.radio ul li label,
       form div.checkbox ul li label {
         margin: 0; }
@@ -329,8 +329,8 @@ p textarea {
 
 #grid,
 .grid {
-  width: 94em;
-  padding: 0 1em;
+  width: 95em;
+  padding: 0 0.5em;
   display: inline-block;
   display: block; }
   #grid:after,
@@ -346,15 +346,19 @@ p textarea {
     height: 1px; }
   * html #grid,
   * html .grid {
-    width: 98em; }
+    width: 97em; }
 
 /* Project Specific SASS
  * Include your project sass and overides here */
 body {
-  background: #FFF url(/images/background.png) repeat-x;
-  font-family: Arial, Helvetica, Verdana, sans-serif; }
+  background: #FFF url(/images/background.png) repeat-x; }
+  body h1, body h2, body h3, body h4 {
+    font-family: garamond, times, serif;
+    text-transform: uppercase; }
+  body input {
+    border: 1px solid #333; }
   body #head {
-    width: 94em;
+    width: 95em;
     margin: 0 auto;
     text-align: left;
     display: inline-block;
@@ -386,14 +390,15 @@ body {
         height: 100%;
         outline: none; }
     body #head ul {
-      margin: 6em 1em 0;
+      margin: 6em 0 0;
       float: left; }
       body #head ul li {
         list-style: none;
         margin: 0;
         display: block;
         float: left;
-        font-weight: normal; }
+        font-weight: normal;
+        font-family: garamond, times, serif; }
         body #head ul li a {
           text-transform: capitalize;
           color: #333; }
@@ -481,15 +486,36 @@ body {
         padding: .5em; }
       body #grid table.admin thead tr {
         background: #CCC; }
-    body #grid .main {
-      width: 46.615em;
-      padding: 1em;
-      margin: 1em;
+    body #grid .pad {
+      width: 3.938em;
+      padding: 0.5em;
+      margin: 0.5em;
       border: 0em none #cc9933;
       -moz-border-radius: 0em;
       -webkit-border-radius: 0em;
       -khtml-border-radius: 0em;
-      display: inline-block; }
+      display: inline-block;
+      float: left; }
+      body #grid .pad:after {
+        content: ".";
+        height: 0;
+        clear: both;
+        display: block;
+        visibility: hidden;
+        line-height: 0; }
+      * html body #grid .pad {
+        height: 1px; }
+    body #grid .main {
+      width: 52.438em;
+      padding: 0.5em;
+      margin: 0.5em;
+      border: 0em none #cc9933;
+      -moz-border-radius: 0em;
+      -webkit-border-radius: 0em;
+      -khtml-border-radius: 0em;
+      display: inline-block;
+      padding-left: 0;
+      padding-right: 0; }
       body #grid .main:after {
         content: ".";
         height: 0;
@@ -504,17 +530,17 @@ body {
       body #grid .main h2 {
         color: #C93;
         margin: 0.556em 0;
-        font-size: 1.8em;
+        font-size: 1.6em;
         padding: 0.556em 0;
         font-weight: normal; }
       body #grid .main h4 {
-        margin-top: 0;
+        margin-top: -1.333em;
         font-weight: normal;
         font-size: 1.2em; }
       body #grid .main ul.tags li {
         display: inline-block;
         margin: 0;
-        font-size: 1.1em; }
+        font-size: 1.2em; }
         body #grid .main ul.tags li:after {
           content: ", "; }
         body #grid .main ul.tags li:last-child:after,
@@ -534,19 +560,19 @@ body {
         body #grid .main .post h2:first-child {
           margin-top: 1.2em; }
       body #grid .main #splash_pic {
-        width: 47.2em;
+        width: 52em;
         height: auto;
         background: #fff;
         padding: .5em;
-        border: .1em solid #CCC; }
+        border: .1em solid #333; }
     body #grid ul.inline {
       margin: 1em 0 0; }
       body #grid ul.inline li {
         display: inline; }
     body #grid .rail {
-      width: 18.026em;
-      padding: 1em;
-      margin: 1em;
+      width: 16.146em;
+      padding: 0.5em;
+      margin: 0.5em;
       border: 0em none #cc9933;
       -moz-border-radius: 0em;
       -webkit-border-radius: 0em;
@@ -568,41 +594,44 @@ body {
       body #grid .rail h2 {
         color: #C93;
         margin: 0.556em 0;
-        font-size: 1.8em;
+        font-size: 1.4em;
         padding: 0.556em 0;
         font-weight: normal; }
       body #grid .rail ul.tag_cloud {
         width: 100%;
-        margin: 2em 0;
-        border: 1px solid #333;
+        margin: 1em 0;
+        border: 1px solid #000;
         padding: .5em; }
         body #grid .rail ul.tag_cloud li {
           display: inline-block;
           margin: 0; }
           body #grid .rail ul.tag_cloud li.tag_level-1 {
-            font_size: .7em; }
+            font-size: .9em; }
           body #grid .rail ul.tag_cloud li.tag_level-2 {
-            font_size: 1em; }
+            font-size: 1.2em; }
           body #grid .rail ul.tag_cloud li.tag_level-3 {
-            font-size: 1.1em; }
-          body #grid .rail ul.tag_cloud li.tag_level-4 {
             font-size: 1.4em; }
+          body #grid .rail ul.tag_cloud li.tag_level-4 {
+            font-size: 1.6em;
+            font-weight: bold; }
           body #grid .rail ul.tag_cloud li.tag_level-5 {
-            font-size: 1.8em;
+            font-size: 2.2em;
             font-weight: bold; }
           body #grid .rail ul.tag_cloud li a {
-            color: #666; }
+            color: #333; }
             body #grid .rail ul.tag_cloud li a:hover {
               color: #cc9933; }
       body #grid .rail ul.social li {
         list-style: none inside;
-        padding: 0 0 0 1.4em;
+        padding: .2em 0 .2em 1.8em;
         margin: 0 0 .5em;
         background: no-repeat left center; }
         body #grid .rail ul.social li.facebook {
-          background-image: url(/images/icons/facebook-16x16.png); }
+          background-image: url(/images/icons/facebook.png); }
         body #grid .rail ul.social li.twitter {
-          background-image: url(/images/icons/twitter-16x16.png); }
+          background-image: url(/images/icons/twitter.png); }
+        body #grid .rail ul.social li.feed {
+          background-image: url(/images/icons/feed.png); }
       body #grid .rail ul#nav {
         float: left; }
         body #grid .rail ul#nav li {
@@ -617,12 +646,31 @@ body {
             color: #333;
             font-family: Times; }
     body #grid .column_one {
-      margin-right: 0; }
+      width: 10.875em;
+      padding: 0.5em;
+      margin: 0.5em;
+      border: 0em none #cc9933;
+      -moz-border-radius: 0em;
+      -webkit-border-radius: 0em;
+      -khtml-border-radius: 0em;
+      display: inline-block;
+      margin: .5em 0;
+      padding: 0; }
+      body #grid .column_one:after {
+        content: ".";
+        height: 0;
+        clear: both;
+        display: block;
+        visibility: hidden;
+        line-height: 0; }
+      * html body #grid .column_one {
+        height: 1px; }
       body #grid .column_one ul.previous {
         margin: 0 auto;
         width: auto;
         display: inline-block;
-        font-size: 1em; }
+        font-size: 1em;
+        padding: 0; }
         body #grid .column_one ul.previous:after {
           content: ".";
           height: 0;
@@ -635,14 +683,15 @@ body {
         body #grid .column_one ul.previous li {
           display: block;
           float: left;
-          width: 7.5em;
-          height: 7.5em;
+          width: 7.6em;
+          height: 7.6em;
           background: #EEE;
-          margin: .25em;
+          margin: .5em 0;
+          padding: 0;
           overflow: hidden;
           list-style: none; }
     body #grid .column_two {
-      margin-left: 0; }
+      margin-right: 0; }
       body #grid .column_two ul.previous {
         margin: 0 auto;
         width: 22em;
@@ -669,6 +718,10 @@ body {
         margin: 1em;
         padding: .5em;
         border-bottom: .1em solid #CCC; }
+      body #grid .column_two form {
+        margin-top: -1.333em; }
+        body #grid .column_two form label {
+          font-size: 1.2em; }
     body #grid form {
       margin: 0 auto; }
     body #grid .editor {

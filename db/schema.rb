@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091021184029) do
+ActiveRecord::Schema.define(:version => 20100126163358) do
 
   create_table "comments", :force => true do |t|
     t.string   "title",            :limit => 50, :default => ""
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(:version => 20091021184029) do
     t.integer  "splash_file_size"
     t.datetime "splash_updated_at"
     t.string   "state"
+    t.datetime "publish_date"
   end
 
   create_table "pages", :force => true do |t|

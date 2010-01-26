@@ -1,23 +1,32 @@
 /*
-Sass::SyntaxError: Undefined variable: "!base_font".
-on line 4 of /home/dan/Projects/socialbite/www/public/stylesheets/sass/client.sass
+Sass::SyntaxError: Undefined variable: "!grid".
+on line 9 of /home/dan/Projects/socialbite/www/public/stylesheets/sass/client.sass
 
-1: body
-2:   :background #FFF url(/images/background.png) repeat-x
-3:   h1,h2,h3,h4
-4:   :font-family= !base_font
-5:   #head
-6:     :width= !grid+"em"
-7:     :margin 0 auto
-8:     :text-align left
-9:     +clearfix
-10:     :display block
+5:     :text-transform uppercase
+6:   input
+7:     :border 1px solid #333
+8:   #head
+9:     :width= !grid+"em"
+10:     :margin 0 auto
+11:     :text-align left
+12:     +clearfix
+13:     :display block
+14:     :clear both
+15:     :padding 2.5em 0  1em
 
 
 Backtrace:
-/home/dan/Projects/socialbite/www/public/stylesheets/sass/client.sass:4
+/home/dan/Projects/socialbite/www/public/stylesheets/sass/client.sass:9
 /home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/script/variable.rb:27:in `perform'
+/home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/script/operation.rb:35:in `perform'
 /home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/tree/prop_node.rb:87:in `perform!'
+/home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/tree/node.rb:179:in `_perform'
+/home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/tree/node.rb:156:in `perform'
+/home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/tree/node.rb:200:in `perform_children'
+/home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/tree/node.rb:200:in `map'
+/home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/tree/node.rb:200:in `perform_children'
+/home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/tree/node.rb:191:in `perform!'
+/home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/tree/rule_node.rb:156:in `perform!'
 /home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/tree/node.rb:179:in `_perform'
 /home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/tree/node.rb:156:in `perform'
 /home/dan/Projects/socialbite/www/vendor/plugins/haml/rails/../lib/sass/tree/node.rb:200:in `perform_children'
@@ -89,4 +98,4 @@ script/server:3
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Sass::SyntaxError: Undefined variable: \"!base_font\".\A on line 4 of /home/dan/Projects/socialbite/www/public/stylesheets/sass/client.sass\A \A 1: body\A 2:   :background #FFF url(/images/background.png) repeat-x\A 3:   h1,h2,h3,h4\A 4:   :font-family= !base_font\A 5:   #head\A 6:     :width= !grid+\"em\"\A 7:     :margin 0 auto\A 8:     :text-align left\A 9:     +clearfix\A 10:     :display block\A "; }
+  content: "Sass::SyntaxError: Undefined variable: \"!grid\".\A on line 9 of /home/dan/Projects/socialbite/www/public/stylesheets/sass/client.sass\A \A 5:     :text-transform uppercase\A 6:   input\A 7:     :border 1px solid #333\A 8:   #head\A 9:     :width= !grid+\"em\"\A 10:     :margin 0 auto\A 11:     :text-align left\A 12:     +clearfix\A 13:     :display block\A 14:     :clear both\A 15:     :padding 2.5em 0  1em\A "; }
