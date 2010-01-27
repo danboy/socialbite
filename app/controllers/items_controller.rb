@@ -18,6 +18,7 @@ class ItemsController < ApplicationController
 
     @pages = Page.all
     @item = Item.new
+    @users = User.all
 
   end
   def create

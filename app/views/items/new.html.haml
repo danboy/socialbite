@@ -10,7 +10,11 @@
   %div
     =f.label :splash, "Feature Image (minimum size: 480X200)"
     =f.file_field :splash
-    =f.hidden_field :user_id, :value => current_user.id
+    -if current_user && current_user.has_role?("admin")
+      =f.label :user_id
+      =f.select :user_id, options_from_collection_for_select(@users,'id','login',current_user.id)
+    -else
+      =f.hidden_field :user_id, :value => current_user.id
   %div
     =f.label :body
     =f.wysihat_editor  :body
