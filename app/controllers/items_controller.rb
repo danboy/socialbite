@@ -46,7 +46,7 @@ class ItemsController < ApplicationController
   end
 
   def find
-    @items = Item.tagged_with(params[:id], :on => :tags,:conditions => "state = 'published'").by_date
+    @items = Item.tagged_with(params[:id], :on => :tags,:conditions => "state = 'published' AND publish_date <= NOW()").by_date
   end
 
   def feature
