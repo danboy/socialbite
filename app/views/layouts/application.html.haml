@@ -39,7 +39,12 @@
           %li= link_to "about", :controller => :pages, :action => :about
           %li= link_to "contact", :controller => :pages, :action => :contact
     :javascript
-      jQuery('.previous li a').wTooltip({className: "tooltip", style: false});
+        jQuery('.previous li a').wTooltip({
+          className: "sb_tooltip", 
+          style: false,
+          offsetY:-180,
+          offsetX:-30
+          });
 
       document.observe("dom:loaded",function(ev){
         #{yield :onReady}
