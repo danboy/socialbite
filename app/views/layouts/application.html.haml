@@ -34,6 +34,7 @@
       .rail.column_two
         = render :partial => "layouts/cloud"
         = yield :column_two
+        = render :partial => "layouts/friends"
         = render :partial => "layouts/adsense"
         %ul#nav
           %li= link_to "about", :controller => :pages, :action => :about

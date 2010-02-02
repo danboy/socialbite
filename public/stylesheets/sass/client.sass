@@ -140,6 +140,10 @@ body
           :display inline-block
           :margin 0
           :font-size 1.2em
+          * + html &
+            :zoom 1
+            :display inline
+            :margin-right .2em
           &:after
             :content ", "
           &:last-child:after,
@@ -188,6 +192,10 @@ body
         li
           :display inline-block
           :margin 0
+          * + html &
+            :zoom 1
+            :display inline
+            :margin-right .2em
           &.tag_level-1
             :font-size .9em
           &.tag_level-2
@@ -216,6 +224,12 @@ body
             :background-image url(/images/icons/twitter.png)
           &.feed
             :background-image url(/images/icons/feed.png)
+      ul.friends
+        :margin-bottom 2em
+        li
+          :list-style none inside
+          :padding 0
+          :margin 0 0 .5em
       ul#nav
         :float left
         li

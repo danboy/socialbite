@@ -541,6 +541,10 @@ body {
         display: inline-block;
         margin: 0;
         font-size: 1.2em; }
+        * + html body #grid .main ul.tags li {
+          zoom: 1;
+          display: inline;
+          margin-right: .2em; }
         body #grid .main ul.tags li:after {
           content: ", "; }
         body #grid .main ul.tags li:last-child:after,
@@ -605,6 +609,10 @@ body {
         body #grid .rail ul.tag_cloud li {
           display: inline-block;
           margin: 0; }
+          * + html body #grid .rail ul.tag_cloud li {
+            zoom: 1;
+            display: inline;
+            margin-right: .2em; }
           body #grid .rail ul.tag_cloud li.tag_level-1 {
             font-size: .9em; }
           body #grid .rail ul.tag_cloud li.tag_level-2 {
@@ -632,6 +640,12 @@ body {
           background-image: url(/images/icons/twitter.png); }
         body #grid .rail ul.social li.feed {
           background-image: url(/images/icons/feed.png); }
+      body #grid .rail ul.friends {
+        margin-bottom: 2em; }
+        body #grid .rail ul.friends li {
+          list-style: none inside;
+          padding: 0;
+          margin: 0 0 .5em; }
       body #grid .rail ul#nav {
         float: left; }
         body #grid .rail ul#nav li {
@@ -742,4 +756,5 @@ body {
     background: transparent url(/images/sb-bite-hover.png) no-repeat center;
     padding: 4em 5.5em 6em 3.5em;
     width: 11em;
-    height: 7em; }
+    height: 7em;
+    text-align: center; }
