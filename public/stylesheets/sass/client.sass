@@ -127,18 +127,21 @@ body
           :list-style-position inside
       h2
         :color #C93
-        :margin= ((!line_height/(!font_size + .4))/2)+"em" 0
+        :margin= ((!line_height/(!font_size + .4))/2)+"em" 0 0
         :font-size= !font_size + .2+"em"
-        :padding= ((!line_height/(!font_size + .4))/2)+"em" 0
+        :padding= ((!line_height/(!font_size + .4)))+"em" 0 ((!line_height/(!font_size + .4))/2)+"em"
         :font-weight normal
+        :border-top .1em dotted #CCC
+        &:first-child
+          :border-top none
       h4
-        :margin-top -1.333em
         :font-weight normal
         :font-size 1.2em
+        :margin-top 0
       ul.tags
         li
           :display inline-block
-          :margin 0 0 2em
+          :margin 0 0
           :font-size 1.2em
           * + html &
             :zoom 1
