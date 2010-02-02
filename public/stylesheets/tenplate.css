@@ -539,7 +539,7 @@ body {
         font-size: 1.2em; }
       body #grid .main ul.tags li {
         display: inline-block;
-        margin: 0;
+        margin: 0 0 2em;
         font-size: 1.2em; }
         * + html body #grid .main ul.tags li {
           zoom: 1;
