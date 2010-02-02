@@ -140,6 +140,7 @@ body
         :font-size 1.2em
         :margin-top 0
       ul.tags
+        :clear both
         li
           :display inline-block
           :margin 0 0
@@ -166,6 +167,15 @@ body
           :margin-bottom 0
         h2:first-child
           :margin-top 1.2em
+        img
+          :float left
+          :vertical-align text-top
+          :margin .5em .5em .5em 0
+          :padding .4em
+          :border .1em solid #333 
+        img:nth-child(2n)
+          :float right
+          :margin .5em 0 .5em .5em
       #splash_pic
         :width 52em
         :height auto

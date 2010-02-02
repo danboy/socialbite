@@ -3,7 +3,11 @@ class ItemsController < ApplicationController
   require_role "author", :only => [:edit,:preview,:new,:create,:index,:update]
   def index
    
-    @items = Item.paginate :page => params[:page], :per_page => 8, :order =>"id desc"
+    if current_user.has_role?('admin')
+      @items = Item.paginate :page => params[:page], :per_page => 8, :order =>"state, publish_date desc"
+    else
+      @items = Item.paginate :page => params[:page], :per_page => 8, :order =>"state, publish_date desc",:conditions => 'user_id = '+current_user.id.to_s
+    end
     render :layout => "admin"
     
   end

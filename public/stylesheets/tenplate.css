@@ -541,19 +541,21 @@ body {
         font-weight: normal;
         font-size: 1.2em;
         margin-top: 0; }
-      body #grid .main ul.tags li {
-        display: inline-block;
-        margin: 0 0;
-        font-size: 1.2em; }
-        * + html body #grid .main ul.tags li {
-          zoom: 1;
-          display: inline;
-          margin-right: .2em; }
-        body #grid .main ul.tags li:after {
-          content: ", "; }
-        body #grid .main ul.tags li:last-child:after,
-        body #grid .main ul.tags li:first-child:after {
-          content: ""; }
+      body #grid .main ul.tags {
+        clear: both; }
+        body #grid .main ul.tags li {
+          display: inline-block;
+          margin: 0 0;
+          font-size: 1.2em; }
+          * + html body #grid .main ul.tags li {
+            zoom: 1;
+            display: inline;
+            margin-right: .2em; }
+          body #grid .main ul.tags li:after {
+            content: ", "; }
+          body #grid .main ul.tags li:last-child:after,
+          body #grid .main ul.tags li:first-child:after {
+            content: ""; }
       body #grid .main .post {
         font-size: 1.4em; }
         body #grid .main .post p, body #grid .main .post div, body #grid .main .post li, body #grid .main .post span {
@@ -567,6 +569,15 @@ body {
           margin-bottom: 0; }
         body #grid .main .post h2:first-child {
           margin-top: 1.2em; }
+        body #grid .main .post img {
+          float: left;
+          vertical-align: text-top;
+          margin: .5em .5em .5em 0;
+          padding: .4em;
+          border: .1em solid #333; }
+        body #grid .main .post img:nth-child(2n) {
+          float: right;
+          margin: .5em 0 .5em .5em; }
       body #grid .main #splash_pic {
         width: 52em;
         height: auto;
