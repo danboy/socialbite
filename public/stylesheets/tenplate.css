@@ -535,6 +535,7 @@ body {
         font-weight: normal;
         border-top: .1em dotted #CCC; }
         body #grid .main h2:first-child {
+          padding: 0.556em 0;
           border-top: none; }
       body #grid .main h4 {
         font-weight: normal;
