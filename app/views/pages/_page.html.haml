@@ -1,0 +1,5 @@
+- @items.each do |item|
+  =link_to image_tag(item.splash.url(:main), :id => 'splash_pic'), :controller => :items, :action => :show, :id => item.id
+  %h2= link_to item.title, :controller => :items, :action => :show, :id => item.id
+  .post= item.body
+

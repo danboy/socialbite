@@ -1,7 +1,7 @@
 %h1=@page.name
 - layout = case @page.page_type
   - when 0 then
-    %p normal
+    =render :partial => "page"
   - when 1 then
     =render :partial => "blog_post"
   - else

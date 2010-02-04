@@ -20,7 +20,7 @@ class PagesController < ApplicationController
     respond_to do |format|
       if @page.save
         flash[:notice] = 'Page was successfully created.'
-        format.html { redirect_to(@page) }
+        format.html { redirect_to(:controller => :pages, :action => :show, :id => @page.name) }
         format.xml  { render :xml => @page, :status => :created, :location => @page }
       else
         format.html { render :action => "new" }
