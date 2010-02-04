@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100126163358) do
+ActiveRecord::Schema.define(:version => 20100202172950) do
 
   create_table "comments", :force => true do |t|
     t.string   "title",            :limit => 50, :default => ""
@@ -32,6 +32,13 @@ ActiveRecord::Schema.define(:version => 20100126163358) do
     t.datetime "expires_at",      :null => false
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+  end
+
+  create_table "item_trigrams", :force => true do |t|
+    t.integer  "item_id"
+    t.string   "token",      :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "items", :force => true do |t|

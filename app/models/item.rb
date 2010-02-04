@@ -1,4 +1,6 @@
 class Item < ActiveRecord::Base
+  include FuzzySearch
+  fuzzy_search_attributes :title, :body
   belongs_to :page
   belongs_to :user
   belongs_to :questionairre

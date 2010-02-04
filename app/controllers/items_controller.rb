@@ -1,12 +1,22 @@
 class ItemsController < ApplicationController
   require_role "admin", :for => [:publish,:draft, :feature, :unfeature,:destroy] # don't allow contractors to destroy
-  require_role "author", :only => [:edit,:preview,:new,:create,:index,:update]
+  require_role "author", :only => [:edit,:preview,:new,:create,:index,:update,:search]
   def index
    
     if current_user.has_role?('admin')
       @items = Item.paginate :page => params[:page], :per_page => 8, :order =>"state, publish_date desc"
     else
       @items = Item.paginate :page => params[:page], :per_page => 8, :order =>"state, publish_date desc",:conditions => 'user_id = '+current_user.id.to_s
+    end
+    render :layout => "admin"
+    
+  end
+ def search
+   
+    if current_user.has_role?('admin')
+      @items= Item.fuzzy_find(params[:id]).paginate( :page => params[:page], :per_page => 8, :order =>"state, publish_date desc")
+    else
+      @items = Item.paginate(:page => params[:page], :per_page => 8, :order =>"state, publish_date desc",:conditions => 'user_id = '+current_user.id.to_s).fuzzy_find(params[:id])
     end
     render :layout => "admin"
     
