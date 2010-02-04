@@ -30,7 +30,7 @@ FLASH_NOTICE_KEYS = [:error, :notice, :warning]
 
   def get_previous_items
     @featured_item = Item.find_featured(:last)
-    @items = Item.all(:limit => 9, :order => 'created_at DESC', :conditions => [ 'state = "published" AND id != ? AND publish_date <= NOW()',@featured_item.id])
+    @items = Item.all(:limit => 9, :order => 'created_at DESC', :conditions => [ 'state = "published" AND id != ? AND page_id = 1 AND publish_date <= NOW()',@featured_item.id])
 
   end
 
