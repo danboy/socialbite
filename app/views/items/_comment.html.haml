@@ -2,6 +2,9 @@
   %div
     =f.label :title
     =f.text_field :title
+  %div
+    =f.label :name
+    =f.text_field :name
     -if current_user
       =f.hidden_field :user_id, :value => current_user.id
   %div

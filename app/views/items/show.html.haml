@@ -12,5 +12,7 @@
 -@item.comments.each do |comment|
   .comment
     %h3= comment.title
-    %h5= "Created #{time_ago_in_words(comment.created_at)} ago"
+    %h5
+      = "Created #{time_ago_in_words(comment.created_at)} ago"
+      = "by #{comment.name}" if !comment.name.nil? 
     %p= comment.comment

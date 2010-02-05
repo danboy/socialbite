@@ -1,5 +1,14 @@
-%h2 Calendar
-%ul
+%h2 Upcoming Events
+%ul#events
+  -last_event_date = ""
   -@events.each do |event|
-    %li
-      %h1=event.title
+    -if last_event_date != event.start.day
+      %li
+        %h1
+          = Date::DAYNAMES[event.start.wday]
+          = Date::MONTHNAMES[event.start.mon]
+          = event.start.day
+    %h2=event.title
+    %p= event.where
+    %p= event.content.gsub /(http|ftp|https):\/\/[^\s]*/, "<a href='\\0'>\\0</a>" if !event.content.nil?
+    - last_event_date = event.start.day

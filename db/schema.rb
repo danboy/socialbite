@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100202172950) do
+ActiveRecord::Schema.define(:version => 20100205204206) do
 
   create_table "comments", :force => true do |t|
     t.string   "title",            :limit => 50, :default => ""
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20100202172950) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
   end
 
   add_index "comments", ["commentable_id"], :name => "index_comments_on_commentable_id"
@@ -32,6 +33,13 @@ ActiveRecord::Schema.define(:version => 20100202172950) do
     t.datetime "expires_at",      :null => false
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+  end
+
+  create_table "feeds", :force => true do |t|
+    t.string   "url"
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "item_trigrams", :force => true do |t|

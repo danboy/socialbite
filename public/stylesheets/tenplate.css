@@ -584,6 +584,18 @@ body {
         background: #fff;
         padding: .5em;
         border: .1em solid #333; }
+    body #grid ul#events li {
+      list-style: none; }
+      body #grid ul#events li h1 {
+        background: #C93;
+        padding: -.5em 0;
+        height: .7em;
+        font-size: 2em;
+        overflow: hidden;
+        white-space: nowrap;
+        color: #FFF; }
+      body #grid ul#events li h2 {
+        border: none; }
     body #grid ul.inline {
       margin: 1em 0 0; }
       body #grid ul.inline li {
