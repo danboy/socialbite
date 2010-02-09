@@ -1,6 +1,8 @@
 %p
   You Searched for
   = params[:id]
+= form_tag "/items/search"
+= text_field_tag "id"
 %table#items.admin
   %tbody
     -@items.each_with_index do |item, index|
