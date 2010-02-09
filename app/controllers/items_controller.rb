@@ -25,7 +25,7 @@ class ItemsController < ApplicationController
   def edit
     @pages = Page.all
     @item = Item.find(params[:id])
-
+    @users = User.all
   end
 
   def new

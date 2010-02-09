@@ -11,3 +11,5 @@
       -item.tags.each do |tag|
         %li= link_to tag, :controller => :items, :action => :find, :id => tag
       %li= link_to "comments (#{item.comments.length})", {:controller => :items, :action => :show, :id => item.id}
+      -if current_user && current_user.has_role?("admin")
+        %li= link_to "**edit**", :controller => :items, :action => :edit, :id => item.id
