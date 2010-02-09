@@ -1,0 +1,15 @@
+%h1
+  Suggest a post
+-form_for(@item, :html => { :multipart => true , :id => "editor_form"}) do |f|
+  %div
+    =f.label :page_id, "which page should it be on?"
+    = collection_select :item, :page_id, @pages, :id, :name
+  %div
+    =f.label :title
+    =f.text_field :title
+  %div
+    =f.label :body
+    =f.wysihat_editor  :body
+  %div
+    =f.submit "Suggest", :id => "trigger"
+

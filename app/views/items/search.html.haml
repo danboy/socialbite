@@ -2,26 +2,10 @@
   You Searched for
   = params[:id]
 %table#items.admin
-  %thead
-    %tr
-      %th Name
-      %th Featured?
-      %th Tools
-      %th State
   %tbody
     -@items.each_with_index do |item, index|
       %tr{ :class => cycle("", "alt")}
-        %td= link_to item.title, :controller => :items, :action => :edit, :id => item.id
-        -if item.featured?
-          %td=link_to "yes", :class => "featured"
-        -else
-          %td=link_to "no", :controller => :items, :action => :feature, :id => item.id
         %td
-          =link_to "edit", :controller => :items, :action => :edit, :id => item.id
-          =link_to "destroy", "/items/destroy/#{item.id}", :confirm => "are you sure you want to delete #{item.title}"
-          =link_to "preview", "/items/preview/#{item.id}"
-        -if item.state == 'draft'
-          %td=link_to "publish", "/items/publish/#{item.id}"
-        -if item.state == 'published'
-          %td=link_to "draft", "/items/draft/#{item.id}"
+          %h2= link_to item.title, :controller => :items, :action => :edit, :id => item.id
+          %p= truncate_html item.body, :length => 150
 %p=will_paginate @items
