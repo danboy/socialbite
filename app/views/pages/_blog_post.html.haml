@@ -6,7 +6,9 @@
     .post= truncate_html item.body, :length => 250
     %ul.tags
       %li
-        = link_to "read more", :controller => :items, :action => :show, :id => item.id
+        = link_to "read more", {:controller => :items, :action => :show, :id => item.id}, :class => "more" 
+      %li
+        = link_to "retweet", {:controller => :items, :action => :show, :id => item.id}, :class => "retweet"
         tags:
       -item.tags.each do |tag|
         %li= link_to tag, :controller => :items, :action => :find, :id => tag
