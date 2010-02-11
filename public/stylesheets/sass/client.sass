@@ -154,6 +154,9 @@ body
           &:last-child:after,
           &:first-child:after
             :content ""
+          &.nocomma:after
+            :content ""
+            
       .post
         :font-size= !font_size + "em"
         p,div,li,span
@@ -336,7 +339,8 @@ body
     :width 11em
     :height 7em
     :text-align center
-  a.more
+  a.more,
+  a.button
     :font 12px Helvetica,Arial
     :color #FFF
     :text-decoration none

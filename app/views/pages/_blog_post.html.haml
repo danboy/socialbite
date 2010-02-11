@@ -5,13 +5,16 @@
     %h4= "Created #{time_ago_in_words(item.created_at)} ago by #{item.user.login}"
     .post= truncate_html item.body, :length => 250
     %ul.tags
-      %li
+      %li.nocomma
         = link_to "read more", {:controller => :items, :action => :show, :id => item.id}, :class => "more" 
-      %li
-        = link_to "retweet", {:controller => :items, :action => :show, :id => item.id}, :class => "retweet"
+      %li.nocomma
+        = link_to "like this (#{item.votes.count})", {:controller => :items, :action => :like, :id => item.id}, :class => "button like" 
+      %li.nocomma
+        = link_to "retweet", {:controller => :items, :action => :show, :id => item.id}, :class => "retweet button"
+      %li.nocomma
+        = link_to "comments (#{item.comments.length})", {:controller => :items, :action => :show, :id => item.id}, :class=> "button"
         tags:
       -item.tags.each do |tag|
         %li= link_to tag, :controller => :items, :action => :find, :id => tag
-      %li= link_to "comments (#{item.comments.length})", {:controller => :items, :action => :show, :id => item.id}
       -if current_user && current_user.has_role?("admin")
         %li= link_to "**edit**", :controller => :items, :action => :edit, :id => item.id

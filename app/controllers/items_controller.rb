@@ -100,6 +100,14 @@ class ItemsController < ApplicationController
     @item.add_comment Comment.new(params[:comment])
     redirect_to :controller => :items, :action => :show, :id => params[:id]
   end
+  
+  def like
+    vote = Vote.new(:vote => true)
+    i = Item.find(params[:id])
+    i.votes    << vote
+    redirect_to :controller => :items, :action => :show, :id => params[:id]
+  end
+  
   def destroy
     @item = Item.find(params[:id])
     @item.destroy

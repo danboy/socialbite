@@ -556,6 +556,8 @@ body {
           body #grid .main ul.tags li:last-child:after,
           body #grid .main ul.tags li:first-child:after {
             content: ""; }
+          body #grid .main ul.tags li.nocomma:after {
+            content: ""; }
       body #grid .main .post {
         font-size: 1.4em; }
         body #grid .main .post p, body #grid .main .post div, body #grid .main .post li, body #grid .main .post span {
@@ -785,7 +787,8 @@ body {
     width: 11em;
     height: 7em;
     text-align: center; }
-  body a.more {
+  body a.more,
+  body a.button {
     font: 12px Helvetica,Arial;
     color: #FFF;
     text-decoration: none;

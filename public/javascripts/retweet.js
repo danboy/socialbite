@@ -100,9 +100,8 @@ function loaded(){
 
 		if ( clicks > 0 ) {
 			for ( var i = 0; i < elems.length; i++ ) {
-				var strong = document.createElement("strong");
-				strong.appendChild( document.createTextNode( clicks + " " ) );
-				elems[i].insertBefore(strong, elems[i].firstChild);
+				var t = document.createTextNode( " ("+clicks + ")" )
+				elems[i].appendChild(t);
 
 				if ( /(^|\s)vert(\s|$)/.test( elems[i].className ) ) {
 					elems[i].firstChild.className = elems[i].lastChild.className = "vert";
@@ -150,7 +149,7 @@ function loaded(){
 		var origText = elem.title || elem.textContent || elem.innerText,
 			href = elem.href;
 
-		elem.innerHTML = "<span>" + RetweetJS.link_text + "</span>";
+		elem.innerHTML = RetweetJS.link_text;
 		elem.title = "";
 		elem.href = "http://twitter.com/home?status=" +
 			encodeURIComponent(RetweetJS.prefix + origText + " http://bit.ly/");

@@ -8,6 +8,7 @@ class Item < ActiveRecord::Base
   named_scope :by_date, :order => "created_at DESC"
   acts_as_featurable
   acts_as_commentable
+  acts_as_voteable
 
   has_attached_file :splash,
                     :styles => { :main => "520x160#", :thumb => "110x110#" },
