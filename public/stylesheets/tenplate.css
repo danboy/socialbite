@@ -788,6 +788,7 @@ body {
     height: 7em;
     text-align: center; }
   body a.more,
+  body li.button,
   body a.button {
     font: 12px Helvetica,Arial;
     color: #FFF;
@@ -798,3 +799,7 @@ body {
     border-radius: .3em;
     padding: .3em;
     background: #94CC3D; }
+  body #common_tags li.button {
+    float: left;
+    margin: .2em;
+    text-align: center; }

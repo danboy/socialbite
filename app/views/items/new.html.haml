@@ -22,8 +22,34 @@
     =f.label :publish_date
     =f.datetime_select :publish_date
   %div
+    %ul#common_tags
+      -@common_tags.each do |tag|
+        %li.button
+          = tag.name
     =f.label :tag_list
     =f.text_field :tag_list
   %div
     =f.submit "Create", :id => "trigger"
+-content_for :onReady do
+  :plain
+    String.prototype.endsWith = function(str)
+    {return (this.match(str+"$")==str)} 
+    $$('#common_tags li.button').each(function(tag){
+      $(tag).observe('click',function(){
+        console.log(tag.innerHTML);
+        current_value = $('item_tag_list').value;
+        if(current_value == ''){
+          $('item_tag_list').value = tag.innerHTML.trim()+",";
+          $(tag).remove();
+        }else if(current_value.match(tag.innerHTML.trim())){
+          return true;
+        }else if(!current_value.endsWith(',') && !current_value.endsWith(', ')){
+           $('item_tag_list').value += ", "+tag.innerHTML.trim()+",";
+           $(tag).remove();
+        }else{
+          $('item_tag_list').value += " "+tag.innerHTML.trim()+",";
+          $(tag).remove();
+        }
+      });
+    });
 

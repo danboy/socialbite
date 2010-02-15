@@ -29,7 +29,7 @@ class ItemsController < ApplicationController
     @pages = Page.all
     @item = Item.new
     @users = User.all
-
+    @common_tags = Item.tag_counts(:limit => 20, :order=>"count desc",:conditions => "state = 'published'")
   end
   def create
     @item = Item.new(params[:item])
