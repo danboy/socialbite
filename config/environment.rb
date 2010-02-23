@@ -7,11 +7,12 @@ RAILS_GEM_VERSION = '2.3.3' unless defined? RAILS_GEM_VERSION
 require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
+  config.gem "acts-as-taggable-on", :source => "http://gemcutter.org"
   config.gem 'thoughtbot-shoulda', :lib => "shoulda", :source => 'http://gems.github.com'
   config.gem "rubyist-aasm", :lib => "aasm", :source => "http://gems.github.com"
   config.gem "gcal4ruby"
   config.gem 'truncate_html', :source => 'http://gemcutter.org'
-  config.gem "acts-as-taggable-on", :source => "http://gemcutter.org"
+  config.gem "peteonrails-vote_fu", :lib => 'vote_fu', :source => 'http://gems.github.com'
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
   # -- all .rb files in that directory are automatically loaded.

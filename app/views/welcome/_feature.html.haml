@@ -2,12 +2,12 @@
   %h2= link_to @feature.title, :controller => :items, :action => :show, :id => @feature.id
   =link_to image_tag(@feature.splash.url(:main), :id => 'splash_pic'), :controller => :items, :action => :show, :id => @feature.id
   %h4= "Created #{time_ago_in_words(@feature.created_at)} ago by #{@feature.user.login}"
-  .post= truncate_html @feature.body, :length => 1200
+  .post= truncate_html @feature.body, :length => 1200, :omission => '...'
   %ul.tags
     %li.nocomma
-      = link_to "read more", {:controller => :items, :action => :show, :id => @feature.id}, :class => "more" 
+      = link_to "read more", {:controller => :items, :action => :show, :id => @feature.id}, :class => "more"
     %li.nocomma
-      = link_to "like this (#{@feature.votes.count})", {:controller => :items, :action => :like, :id => @feature.id}, :class => "button like" 
+      = link_to "like this (#{@feature.votes.count})", {:controller => :items, :action => :like, :id => @feature.id}, :class => "button like"
     %li.nocomma
       = link_to "retweet", {:controller => :items, :action => :show, :id => @feature.id}, :class => "retweet button"
     %li.nocomma

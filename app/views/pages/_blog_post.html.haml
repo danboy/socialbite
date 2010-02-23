@@ -6,9 +6,9 @@
     .post= truncate_html item.body, :length => 250
     %ul.tags
       %li.nocomma
-        = link_to "read more", {:controller => :items, :action => :show, :id => item.id}, :class => "more" 
+        = link_to "read more", {:controller => :items, :action => :show, :id => item.id}, :class => "more"
       %li.nocomma
-        = link_to "like this (#{item.votes.count})", {:controller => :items, :action => :like, :id => item.id}, :class => "button like" 
+        = link_to "like this (#{item.votes.count})", {:controller => :items, :action => :like, :id => item.id}, :class => "button like"
       %li.nocomma
         = link_to "retweet", {:controller => :items, :action => :show, :id => item.id}, :class => "retweet button"
       %li.nocomma
