@@ -19,7 +19,7 @@ class AdminController < ApplicationController
     users.each do |user|
       if user.has_role?("admin") || user.has_role?("author")
         @posts.push(user.items.count)
-        @users.push(user.login)
+        @users.push("#{user.login}(#{user.items.count})")
       end
     end
     return [@users.join("|"),@posts.join(",")]

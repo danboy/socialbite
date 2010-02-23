@@ -1,21 +1,22 @@
 class ItemsController < ApplicationController
   require_role "admin", :for => [:publish,:draft, :feature, :unfeature,:destroy] # don't allow contractors to destroy
   require_role "author", :only => [:edit,:preview,:new,:create,:index,:update]
+  require_role "user", :only => [:like,:comment]
   def index
-   
+
     if current_user.has_role?('admin')
       @items = Item.paginate :page => params[:page], :per_page => 8, :order =>"state, publish_date desc"
     else
       @items = Item.paginate :page => params[:page], :per_page => 8, :order =>"state, publish_date desc",:conditions => 'user_id = '+current_user.id.to_s
     end
     render :layout => "admin"
-    
+
   end
  def search
 
       @items= Item.fuzzy_find(params[:id]).paginate( :page => params[:page], :per_page => 8, :order =>"publish_date desc", :conditions =>"state=='published'")
     render :layout => "admin"
-    
+
   end
 
   def edit
@@ -100,14 +101,19 @@ class ItemsController < ApplicationController
     @item.add_comment Comment.new(params[:comment])
     redirect_to :controller => :items, :action => :show, :id => params[:id]
   end
-  
+
   def like
-    vote = Vote.new(:vote => true)
+    #vote = Vote.new(:vote => true)
+    #i = Item.find(params[:id])
+    #i.votes    << vote
     i = Item.find(params[:id])
-    i.votes    << vote
-    redirect_to :controller => :items, :action => :show, :id => params[:id]
+    current_user.vote_for(i) unless current_user.voted_for?(i)
+    respond_to do |format|
+      format.html {redirect_to :controller => :items, :action => :show, :id => params[:id]}
+      format.js {render i.votes}
+    end
   end
-  
+
   def destroy
     @item = Item.find(params[:id])
     @item.destroy

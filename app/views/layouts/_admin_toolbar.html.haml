@@ -11,3 +11,11 @@
     %li= link_to "create a post", :controller => :items, :action => :new
     %li= link_to "edit posts", :controller => :items
     %li= link_to "logout", :controller => :logout
+-elsif current_user && current_user.has_role?("user")
+  %ul#user
+    %li.button= link_to "logout", :controller => :logout
+-else
+  %ul#user
+    %li.button= link_to "login", login_path
+    %li or
+    %li.button= link_to "register", register_path

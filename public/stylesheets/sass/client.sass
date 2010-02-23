@@ -52,6 +52,17 @@ body
       :float left
       li
         :margin-left 1em
+    ul#user
+      :position absolute
+      :top 0
+      :right 0
+      :margin 0
+      :padding .5em 0 0
+      li
+        :margin-left .5em
+        &.button
+          :background #EEE
+          :border none
     ul#admin
       :width 10em
       :background transparent url(../images/admin.png) no-repeat center -1em
@@ -87,7 +98,7 @@ body
           :-webkit-border-bottom-left-radius .4em
       &:hover li
         :display block
-        
+
   #grid
     +clearfix
     :display block
@@ -156,11 +167,11 @@ body
             :content ""
           &.nocomma:after
             :content ""
-            
+
       .post
         :font-size= !font_size + "em"
         p,div,li,span
-          :font-size 1em 
+          :font-size 1em
         p:last-child
           :margin-bottom 0
         h2
@@ -175,7 +186,7 @@ body
           :vertical-align text-top
           :margin .5em .5em .5em 0
           :padding .4em
-          :border .1em solid #333 
+          :border .1em solid #333
         img:nth-child(2n)
           :float right
           :margin .5em 0 .5em .5em

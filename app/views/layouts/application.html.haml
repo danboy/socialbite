@@ -2,7 +2,7 @@
 %html
   %head
     = stylesheet_link_tag 'tenplate','facebox','wysihat'
-    %link{'rel' => "alternate", 'type' => "application/rss+xml", 'title' => "RSS 2.0", 'href' => "/pages/Home.rss"}
+    %link{'rel' => "alternate", 'type' => "application/rss+xml", 'title' => "RSS 2.0", 'href' => "http://feeds.feedburner.com/Socialbite"}
     - # include javascript
     = javascript_include_tag "jquery","twitter","retweet","wtooltip","prototype","effects","controls","dragdrop","wysihat","facebox"
     %title SocialBite - lovers of food. local, organic and sustainably produced.
@@ -22,7 +22,7 @@
         %li= link_to "read", :controller => :items, :action => :find, :id => "read"
         %li= link_to "events", :controller => :events
     #grid
-      
+
       .main
         = flash_messages
         = yield
@@ -41,7 +41,7 @@
           %li= link_to "contact", :controller => :pages, :action => :contact
     :javascript
         jQuery('.previous li a').wTooltip({
-          className: "sb_tooltip", 
+          className: "sb_tooltip",
           style: false,
           offsetY:-180,
           offsetX:-30

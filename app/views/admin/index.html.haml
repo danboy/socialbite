@@ -12,7 +12,7 @@
       %td= @published.count
       %td= @comment_count
       %td= @tag_count
-= image_tag "http://chart.apis.google.com/chart?chco=4D89F9&amp;chs=950x150&amp;chbh=30,75,50&amp;cht=bvg&amp;chxt=x,y&amp;chd=t:#{@post_stats[1].to_s}&amp;chxl=0:|#{@post_stats[0].to_s}", :alt=>"users posts chart"
+= image_tag "http://chart.apis.google.com/chart?chco=4D89F9&amp;chs=950x150&amp;chbh=30,75,60&amp;cht=bvg&amp;chxt=x,y&amp;chd=t:#{@post_stats[1].to_s}&amp;chxl=0:|#{@post_stats[0].to_s}", :alt=>"users posts chart"
 %h2 Awaiting moderation
 %table#drafts.admin
   %thead
