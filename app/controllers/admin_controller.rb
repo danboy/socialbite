@@ -1,7 +1,7 @@
 class AdminController < ApplicationController
   require_role "admin", :for => :all
   def index
-    @drafts = Item.all(:conditions => "state ='draft'");
+    @drafts = Item.all(:conditions => "state ='draft'", :order => "publish_date desc");
     @count = Item.count
     @published = Item.all(:conditions => "state ='published'");
     @comment_count = Comment.count
