@@ -13,6 +13,7 @@
     %li= link_to "logout", :controller => :logout
 -elsif current_user && current_user.has_role?("user")
   %ul#user
+    %li.button= link_to "submit an item", :controller => :items, :action => :new
     %li.button= link_to "logout", :controller => :logout
 -else
   %ul#user
