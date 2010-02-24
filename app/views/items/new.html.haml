@@ -1,4 +1,6 @@
--if current_user.has_role?(['author','admin'])
-  = render :partiol => "admin_form"
--else
+- if current_user.has_role?('admin') || current_user.has_role?('author')
+
+  = render :partial => "admin_form"
+- else
+
   = render :partial => "user_form"
