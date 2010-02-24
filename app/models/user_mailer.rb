@@ -16,7 +16,7 @@ class UserMailer < ActionMailer::Base
   protected
     def setup_email(user)
       @recipients  = "#{user.email}"
-      @from        = "info@socialbite.com"
+      @from        = "socialbiteevents@gmail.com"
       @subject     = "[SocialBite.com] "
       @sent_on     = Time.now
       @body[:user] = user
