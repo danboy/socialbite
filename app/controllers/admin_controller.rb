@@ -7,6 +7,7 @@ class AdminController < ApplicationController
     @comment_count = Comment.count
     @tag_count = Tag.count
     @all_users = User.all(:conditions => "state ='active'")
+    @users = User.all(:conditions => "state ='active'")
     @post_stats = get_user_stats @users
     render :layout => "admin"
   end
