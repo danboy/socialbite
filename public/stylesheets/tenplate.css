@@ -597,6 +597,10 @@ body {
         background: #fff;
         padding: .5em;
         border: .1em solid #333; }
+      body #grid .main iframe.editor {
+        height: 10em; }
+      body #grid .main #editor_form iframe.editor {
+        height: 30em; }
     body #grid ul#events li {
       list-style: none; }
       body #grid ul#events li h1 {
