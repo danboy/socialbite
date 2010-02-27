@@ -16,13 +16,17 @@ class AdminController < ApplicationController
 
   def get_user_stats users
     @users = []
+    @kusers = []
     @posts = []
+    @karma = []
     users.each do |user|
       if user.has_role?("admin") || user.has_role?("author")
         @posts.push(user.items.count)
+        @karma.push(user.karma)
         @users.push("#{user.login}(#{user.items.count})")
+        @kusers.push("#{user.login}(#{user.karma})")
       end
     end
-    return [@users.join("|"),@posts.join(",")]
+    return [@users.join("|"),@posts.join(","),@karma.join(","),@kusers.join("|")]
   end
 end
