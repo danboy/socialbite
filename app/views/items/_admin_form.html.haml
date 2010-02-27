@@ -36,7 +36,6 @@
     {return (this.match(str+"$")==str)}
     $$('#common_tags li.button').each(function(tag){
       $(tag).observe('click',function(){
-        console.log(tag.innerHTML);
         current_value = $('item_tag_list').value;
         if(current_value == ''){
           $('item_tag_list').value = tag.innerHTML.trim()+",";
