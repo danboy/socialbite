@@ -6,3 +6,4 @@
       -if user.activated_at.nil?
         =link_to "activate", :controller => :users, :action => :activate, :activation_code => user.activation_code
   %li=link_to "add", "/signup"
+%p=will_paginate @users
