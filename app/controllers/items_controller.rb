@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
-  require_role "admin", :for => [:publish,:draft, :feature, :unfeature,:destroy] # don't allow contractors to destroy
-  require_role "author", :only => [:edit,:preview,:index,:update]
-  require_role "user", :only => [:like,:comment,:new,:create]
+  require_role "user", :for => [:like, :comment, :new, :create]
+  require_role "author", :for => [:edit, :preview, :index, :update]
+  require_role "admin", :for => [:publish, :draft, :feature, :unfeature,:destroy] # don't allow contractors to destroy
   def index
 
     if current_user.has_role?('admin')

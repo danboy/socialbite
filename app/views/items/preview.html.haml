@@ -2,11 +2,14 @@
   =image_tag @item.splash.url(:main), :id => 'splash_pic'
 %h1
   =@item.title
-%h4= "Created #{time_ago_in_words(@item.created_at)} ago"
+%h4= "Created #{time_ago_in_words(@item.publish_date)} ago by #{@item.user.login}"
 .post= @item.body
 %ul.tags
   -@item.tags.each do |tag|
     %li= tag
+  -if current_user && current_user.has_role?("admin")
+    %li= link_to "**edit**", :controller => :items, :action => :edit, :id => @item.id
+    %li= link_to "**publish**", :controller => :items, :action => :publish, :id => @item.id
 %h2 add a comment
 = render :partial => "items/comment", :locals => {:commentable_item => @item}
 -@item.comments.each do |comment|

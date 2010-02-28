@@ -2,7 +2,7 @@
   =image_tag @item.splash.url(:main), :id => 'splash_pic'
 %h2
   =link_to @item.title, :controller => :items, :action => :show, :id => @item.id
-%h4= "Created #{time_ago_in_words(@item.created_at)} ago by #{@item.user.login}"
+%h4= "Created #{time_ago_in_words(@item.publish_date)} ago by #{@item.user.login}"
 .post= @item.body
 %ul.tags
   %li.nocomma

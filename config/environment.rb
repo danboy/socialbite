@@ -13,6 +13,7 @@ Rails::Initializer.run do |config|
   config.gem "gcal4ruby"
   config.gem 'truncate_html', :source => 'http://gemcutter.org'
   config.gem "peteonrails-vote_fu", :lib => 'vote_fu', :source => 'http://gems.github.com'
+  config.gem 'gravtastic', :version => '>= 2.1.0'
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
   # -- all .rb files in that directory are automatically loaded.
