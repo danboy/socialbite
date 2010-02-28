@@ -213,6 +213,48 @@ body
           :color #FFF
         h2
           :border none
+    ul#users
+      li
+        :list-style none
+        :border .1em solid #333
+        :padding 1em
+        :margin 1em 1em 1em 0
+        :width 5.6em
+        :display inline-block
+        :vertical-align top
+    ul#search
+      li
+        img
+          :display none
+        p
+          :margin-bottom .2em
+        ul.tags
+          :clear both
+          :margin-bottom 1em
+          li
+            :display inline-block
+            :margin 0 0
+            :font-size 1em
+            * + html &
+              :zoom 1
+              :display inline
+              :margin-right .2em
+            &:after
+              :content ", "
+            &:last-child:after,
+            &:first-child:after
+              :content ""
+            &.nocomma:after
+              :content ""
+    form.search
+      :clear both
+      input
+        :margin 0 0
+        :display inline-block
+        &[type=submit]
+          :margin-left 0
+          :padding 0
+          :width 3em
     ul.inline
       :margin 1em 0 0
       li

@@ -1,13 +1,23 @@
-%p
-  You Searched for
-  = params[:id]
-= form_tag "/items/search"
-= text_field_tag "id"
-%table#items.admin
-  %tbody
-    -@items.each_with_index do |item, index|
-      %tr{ :class => cycle("", "alt")}
-        %td
-          %h2= link_to item.title, :controller => :items, :action => :edit, :id => item.id
-          %p= truncate_html item.body, :length => 150
+%div
+  %p
+    You Searched for
+    = params[:id]
+  %h2 Search Again:
+%form{:action=> "/search", :method => "get"}
+  = text_field_tag "id"
+  = submit_tag "search"
+%ul#search
+  -@items.each_with_index do |item, index|
+    %li
+      %h3= link_to item.title, :controller => :items, :action => :show, :id => item.id
+      = truncate_html item.body, :length => 100
+      %ul.tags
+        %li.nocomma
+          = link_to "http://www.socialbite.com/items/show/#{item.id}", {:controller => :items, :action => :show, :id => item.id}
+        %li.nocomma
+          tags:
+        -item.tags.each do |tag|
+          %li= link_to tag, :controller => :items, :action => :find, :id => tag
+        -if current_user && current_user.has_role?("admin")
+          %li= link_to "**edit**", :controller => :items, :action => :edit, :id => item.id
 %p=will_paginate @items

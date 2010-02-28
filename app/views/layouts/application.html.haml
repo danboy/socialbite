@@ -32,6 +32,10 @@
         = render :partial => "layouts/follow"
       .pad
       .rail.column_two
+        %h2 Search
+        %form{:action=> "/search", :method => "get", :class => "search"}
+          = text_field_tag "id"
+          = submit_tag "go"
         = render :partial => "layouts/cloud"
         = yield :column_two
         = render :partial => "layouts/friends"

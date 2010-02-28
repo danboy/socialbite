@@ -10,6 +10,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :pages
   map.resources :items
   map.resources :questionaires
+  map.search '/search', :controller => 'items', :action => 'search'
 
 
   map.resource :session

@@ -1,7 +1,9 @@
 require 'digest/sha1'
 
 class User < ActiveRecord::Base
-
+  require "aasm"
+  include AASM
+  aasm_column :state
   acts_as_voter
   has_many :comments
   has_karma :items
@@ -21,7 +23,9 @@ class User < ActiveRecord::Base
   # ---------------------------------------
 
 
-
+  aasm_event :ban do
+    transitions :to => :banned, :from => [:active]
+  end
 
   include Authentication
   include Authentication::ByPassword

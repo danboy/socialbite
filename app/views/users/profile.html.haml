@@ -1,5 +1,6 @@
 = image_tag @user.gravatar_url
-= link_to "change your picture", "http://en.gravatar.com/site/signup"
+- if current_user == @user
+  = link_to "change your picture", "http://en.gravatar.com/site/signup"
 %h2
   = "#{@user.login}'s profile"
 %ul.stats

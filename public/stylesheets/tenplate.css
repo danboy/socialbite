@@ -613,6 +613,45 @@ body {
         color: #FFF; }
       body #grid ul#events li h2 {
         border: none; }
+    body #grid ul#users li {
+      list-style: none;
+      border: .1em solid #333;
+      padding: 1em;
+      margin: 1em 1em 1em 0;
+      width: 5.6em;
+      display: inline-block;
+      vertical-align: top; }
+    body #grid ul#search li img {
+      display: none; }
+    body #grid ul#search li p {
+      margin-bottom: .2em; }
+    body #grid ul#search li ul.tags {
+      clear: both;
+      margin-bottom: 1em; }
+      body #grid ul#search li ul.tags li {
+        display: inline-block;
+        margin: 0 0;
+        font-size: 1em; }
+        * + html body #grid ul#search li ul.tags li {
+          zoom: 1;
+          display: inline;
+          margin-right: .2em; }
+        body #grid ul#search li ul.tags li:after {
+          content: ", "; }
+        body #grid ul#search li ul.tags li:last-child:after,
+        body #grid ul#search li ul.tags li:first-child:after {
+          content: ""; }
+        body #grid ul#search li ul.tags li.nocomma:after {
+          content: ""; }
+    body #grid form.search {
+      clear: both; }
+      body #grid form.search input {
+        margin: 0 0;
+        display: inline-block; }
+        body #grid form.search input[type=submit] {
+          margin-left: 0;
+          padding: 0;
+          width: 3em; }
     body #grid ul.inline {
       margin: 1em 0 0; }
       body #grid ul.inline li {
